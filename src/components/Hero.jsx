@@ -28,11 +28,11 @@ const Hero = () => {
           <p className="text-2xl md:text-3xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
             To get a copy of my resume, please click the link below.
             <br></br>
-            <a href="https://drive.google.com/uc?export=download&id=1rvD4iDZLZ771voHMAv2ZmP0YO8rVtBXR" className="text-blue-600 hover:underline">
+            <a href="https://drive.google.com/uc?export=download&id=1S0nqdpUimw_mBBQNxVdTZzinGrdFv7Xg" className="text-blue-600 hover:underline">
               Download Resume
             </a>
           </p>
-
+          
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
             <button 
               onClick={scrollToAbout}
