@@ -96,7 +96,7 @@ const Projects = () => {
 								</div>
 							)}
 							<CardHeader>
-								<CardTitle className="text-xl">{project.title}</CardTitle>
+								<CardTitle className="text-xl items-center text-center">{project.title}</CardTitle>
 								<CardDescription className="flex flex-wrap gap-2 mt-2">
 									{project.tags.map((tag, i) => (
 										<span key={i} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
@@ -105,7 +105,7 @@ const Projects = () => {
 									))}
 								</CardDescription>
 							</CardHeader>
-							<CardContent className="flex-grow">
+							<CardContent className="flex-grow items-center text-center">
 								<p className="text-gray-700">{project.description}</p>
 							</CardContent>
 							<CardFooter className="flex gap-3 pt-4">
