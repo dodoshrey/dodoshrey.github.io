@@ -61,7 +61,7 @@ const projects = [
 		imageUrl: "/project_pic/basic_template.jpg"
 	},
 	{
-		title: "Animation using hover",
+		title: "Animation Using Hover",
 		description: "Basic hover command is used to implement animation in this project",
 		tags: ["HTML", "CSS"],
 		githubUrl: "https://github.com/dodoshrey/Example-of-using-hover-command-HTML-CSS",
