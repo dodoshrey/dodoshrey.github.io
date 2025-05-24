@@ -5,17 +5,17 @@ import { Button } from "./ui/button";
 
 const projects = [
 	{
-		title: "Tic-tac-toe Game",
-		description: "Created a fun 2 player game working with React.js.",
-		tags: ["React", "JavaScript", "CSS"],
+		title: "Tic Tac Toe",
+		description: "Created Tic Tac Toe, a fun 2 player game with ReactJS.",
+		tags: ["ReactJS", "JavaScript", "CSS"],
 		githubUrl: "https://github.com/dodoshrey/tic-tac-toe",
 		demoUrl: "https://dodoshrey.github.io/tic-tac-toe/",
 		imageUrl: "/project_pic/tic_tac_toe.jpg"
 	},
 	{
-		title: "Robo-Search App",
-		description: "Gained experience working with RESTful API, Node.js. Creating configuration, build, and test scripts to create a responsive website. Ensured responsiveness of the design on smartphones and other devices.",
-		tags: ["React", "Node.js", "RESTful API", "Responsive Design"],
+		title: "Robot Name Search App",
+		description: "A project to show 'filter name functionality'. Ensured responsiveness of the design on smartphones and other devices.",
+		tags: ["ReactJS", "Node.js", "RESTful API", "Responsive Design"],
 		githubUrl: "https://github.com/dodoshrey/robots",
 		demoUrl: "https://dodoshrey.github.io/robots",
 		imageUrl: "/project_pic/robots.jpg"
@@ -30,7 +30,7 @@ const projects = [
 	},
 	{
 		title: "Pig Game",
-		description: "Created a 2 player game using HTML, CSS, Javascript",
+		description: "Created a 2 player dice sum counting game using HTML, CSS, Javascript",
 		tags: ["HTML", "CSS", "JS", "Responsive Design"],
 		githubUrl: "https://github.com/dodoshrey/pig-game",
 		demoUrl: "https://dodoshrey.github.io/pig-game/",
@@ -38,7 +38,7 @@ const projects = [
 	},
 	{
 		title: "DOM Manipulation Example",
-		description: "Made a list in which you can add new items or delete existing items",
+		description: "Made a shopping list example in which you can add new items or delete existing items",
 		tags: ["HTML", "CSS", "JS"],
 		githubUrl: "https://github.com/dodoshrey/DOM-Manupulation-Example",
 		demoUrl: "https://dodoshrey.github.io/DOM-Manupulation-Example",
