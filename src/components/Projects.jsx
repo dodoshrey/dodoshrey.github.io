@@ -21,7 +21,7 @@ const projects = [
 		imageUrl: "/project_pic/robots.jpg"
 	},
 	{
-		title: "Buddget Calculator",
+		title: "Budget Calculator",
 		description: "A smart budget calculator app that helps you manage your finances effectively.",
 		tags: ["HTML", "CSS", "JavaScript"],
 		githubUrl: "https://github.com/dodoshrey/budget-calculator-app",
