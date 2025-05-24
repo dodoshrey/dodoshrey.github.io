@@ -37,7 +37,7 @@ const projects = [
 		imageUrl: "/project_pic/pig_game.jpg"
 	},
 	{
-		title: "Dom Manipulation Example",
+		title: "DOM Manipulation Example",
 		description: "Made a list in which you can add new items or delete existing items",
 		tags: ["HTML", "CSS", "JS"],
 		githubUrl: "https://github.com/dodoshrey/DOM-Manupulation-Example",
