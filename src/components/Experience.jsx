@@ -10,37 +10,38 @@ const Experience = () => {
       location: "Dublin, Ireland",
       description: "Building solutions to improve security and privacy for Microsoft and connect to Microsoft services on https://login.live.com/ and https://account.live.com/pw to provide authentication to 2+ billion customers per month.",
       achievements: [
-        "Working independently to deliver solutions across multiple micro-services following the Scrum development process",
-        "Working mainly to migration of a legacy .NET Framework codebase to a modern ReactJS architecture, increase efficiency of service and reducing latency for end users",
-        "Collaborated with cross-functional teams across Microsoft—including Authenticator, Windows, Teams, and Xbox—to enhance security and privacy features for user authentication",
-        "Coordinated closely with design, product management, and development teams to deliver elegant, usable, and responsive UI/UX across multiple platforms and devices",
-        "Implemented security enhancements that led to a 60% reduction in unauthorized access attempts",
-        "Served as an On-Call Engineer to monitor and maintain service health, proactively resolving and mitigating incidents"
+        "Independently delivered solutions across multiple micro-services following the Scrum development process.",
+        "Migrated a legacy .NET Framework architecture to ReactJS, improving efficiency of service and reducing latency.",
+        "Collaborated with cross-functional teams across Microsoft—including Authenticator, Windows, Teams, and Xbox—to enhance security and privacy features for user authentication, ensuring seamless integration and platform compatibility.",
+        "Coordinated closely with design, product management, and development teams to deliver elegant, usable, and responsive UI/UX across multiple platforms and devices.",
+        "Regularly engaged in writing, debugging, and testing code, implementing key features, contributing to project planning, and mentoring engineers.",
+        "Implemented security enhancements to reduce unauthorized access attempts, significantly improving the integrity of Microsoft’s authentication system.",
+        "Served as an On-Call Engineer to monitor and maintain service health, proactively resolving and mitigating incidents to ensure high availability and reliability."
       ],
       projects: [
         {
           name: "Account Reset Password Migration to React",
           details: [
-            "Worked on migrating Microsoft's Account Recovery screens from Knockout.JS to React.JS",
-            "Collaborated with Figma design team to work the UI design and successfully migrated screen by creating the right components",
-            "Wrote integration tests and unit tests to test the integrity of migrated page on Playwright (Storybook)"
+            "Migrated Microsoft’s Account Recovery screens from Knockout.JS to React.JS.",
+            "Collaborated with Figma design team to work the UI design and successfully migrated screen by creating the right components.",
+            "Wrote integration tests and unit tests to test the integrity of migrated page on Playwright (Storybook)."
           ]
         },
         {
           name: "Microsoft Account Recovery Service (MARS) Migration",
           details: [
-            "Worked closely with multiple teams to depreciate old service and migrate to new one",
-            "Build new API to send/receive data with their required configurations",
-            "Mentoring peers across team with technical assistance and overall feedback and coaching",
-            "Wrote E2E functional, integration and unit tests to cover all scenarios and avoid breaking changes"
+            "Worked closely with multiple teams to depreciate old service and migrate to new one.",
+            "Build new API to send/receive data with their required configurations.",
+            "Mentoring peers across team with technical assistance and overall feedback and coaching.",
+            "Wrote E2E functional, integration and unit tests to cover all scenarios and avoid breaking changes."
           ]
         },
         {
           name: "Xbox Build Number Logging",
           details: [
-            "Worked closely with Xbox teams to capture build number of Xbox and log the activity of users going through Account Login/SignUp through Xbox",
-            "Logged new datapoint to send new parameter to data-stream by updating APIs to pick build number and then forward it to the required service for logging",
-            "Created monitors and dashboard to keep track of the Xbox Login and Signup service"
+            "Collaborated with Xbox teams to capture build number of Xbox and log the activity of users going through Account Login/SignUp through Xbox.",
+            "Logged new datapoint to send new parameter to data-stream by updating APIs to pick build number and then forward it to the required service for logging.",
+            "Created monitors and dashboard to keep track of the Xbox Login and Signup service."
           ]
         }
       ],
@@ -53,7 +54,7 @@ const Experience = () => {
       location: "India",
       description: "Orchestrate reusable code and libraries (with matching documentation) to a standard to make it quick and easy to maintain the code in the future.",
       achievements: [
-        "Ensured efficient web development by supporting designers and app developers while resolving website performance issues"
+        "Ensured efficient web development by supporting designers and app developers while resolving website performance issues."
       ],
       technologies: ["HTML", "CSS", "JavaScript", "React"]
     },
@@ -64,8 +65,7 @@ const Experience = () => {
       location: "Ireland",
       description: "Worked on interface with the design team, product management and development teams to create elegant, usable, responsive and interactive interfaces across multiple devices.",
       achievements: [
-        "Developed an in-depth understanding of the entire web development process using HTML, CSS and Javascript",
-        "Converting UI/UX designs into prototypes, creating excellent interactions from designs as well as developing features to enhance user experience"
+        "Developed an in-depth understanding of the entire web development process using HTML, CSS and Javascript. Converting UI/UX designs into prototypes, creating excellent interactions from designs as well as developing features to enhance user experience"
       ],
       technologies: ["HTML", "CSS", "JavaScript", "UI/UX Design"]
     }
