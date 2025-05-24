@@ -59,7 +59,7 @@ const Experience = () => {
       technologies: ["HTML", "CSS", "JavaScript", "React"]
     },
     {
-      title: "Web Development Intern",
+      title: "Web Development - Intern",
       company: "NT-MDT",
       period: "September 2020 - May 2021",
       location: "Ireland",

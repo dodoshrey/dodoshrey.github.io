@@ -104,7 +104,7 @@ const Skills = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
               <div className="text-3xl font-bold text-blue-600 mb-2">3+</div>
-              <div className="text-gray-700">Years of Experience</div>
+              <div className="text-gray-700">Years of Professional Experience</div>
             </div>
             <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl">
               <div className="text-3xl font-bold text-green-600 mb-2">20+</div>
