@@ -10,7 +10,7 @@ const projects = [
 		tags: ["React", "JavaScript", "CSS"],
 		githubUrl: "https://github.com/dodoshrey/tic-tac-toe",
 		demoUrl: "https://dodoshrey.github.io/tic-tac-toe/",
-		imageUrl: "https://media.licdn.com/dms/image/v2/D562DAQFrdI-CDCqLLg/profile-treasury-image-shrink_800_800/B56ZbQY.LcG4AY-/0/1747252929870?e=1748606400&v=beta&t=14L8RrlehrsUcMMlZ0WAWrGFlCwsr0aDSg6Vs56y6aI"
+		imageUrl: "/project_pic/tic_tac_toe.jpg"
 	},
 	{
 		title: "Robo-Search App",
@@ -18,7 +18,15 @@ const projects = [
 		tags: ["React", "Node.js", "RESTful API", "Responsive Design"],
 		githubUrl: "https://github.com/dodoshrey/robots",
 		demoUrl: "https://dodoshrey.github.io/robots",
-		imageUrl: "https://media.licdn.com/dms/image/v2/D562DAQGpQhWXP1Qkrw/profile-treasury-image-shrink_800_800/B56ZbQYsFRHgAY-/0/1747252855859?e=1748606400&v=beta&t=_Em90FDbfXOz80Yj4bZ-7y4bMOqXOIm3rgUNnxJkxwE"
+		imageUrl: "/project_pic/robots.jpg"
+	},
+	{
+		title: "Buddget Calculator",
+		description: "A smart budget calculator app that helps you manage your finances effectively.",
+		tags: ["HTML", "CSS", "JavaScript"],
+		githubUrl: "https://github.com/dodoshrey/budget-calculator-app",
+		demoUrl: "https://dodoshrey.github.io/budget-calculator-app/",
+		imageUrl: "/project_pic/budget_calculator.jpg"
 	},
 	{
 		title: "Pig Game",
@@ -26,7 +34,39 @@ const projects = [
 		tags: ["HTML", "CSS", "JS", "Responsive Design"],
 		githubUrl: "https://github.com/dodoshrey/pig-game",
 		demoUrl: "https://dodoshrey.github.io/pig-game/",
-		imageUrl: "https://media.licdn.com/dms/image/v2/D562DAQE_edLT4KmvKA/profile-treasury-image-shrink_800_800/B56ZbQYheVH0AY-/0/1747252812160?e=1748606400&v=beta&t=uU_Qv4_rdExWC-Le9rD0Z6I2lpNb0wY-badeUt17LEU"
+		imageUrl: "/project_pic/pig_game.jpg"
+	},
+	{
+		title: "Dom Manipulation Example",
+		description: "Made a list in which you can add new items or delete existing items",
+		tags: ["HTML", "CSS", "JS"],
+		githubUrl: "https://github.com/dodoshrey/DOM-Manupulation-Example",
+		demoUrl: "https://dodoshrey.github.io/DOM-Manupulation-Example",
+		imageUrl: "/project_pic/DOM_Manipulation.jpg"
+	},
+	{
+		title: "Furniture Shopping Site",
+		description: "Created a furniture shopping site using HTML, CSS, and JavaScript.",
+		tags: ["HTML", "CSS", "JavaScript"],
+		githubUrl: "https://github.com/dodoshrey/first-site",
+		demoUrl: "https://dodoshrey.github.io/first-site/",
+		imageUrl: "/project_pic/furniture_shop.jpg"
+	},
+	{
+		title: "Basic template for website",
+		description: "A template/design for creating a webpage using HTML and CSS",
+		tags: ["HTML", "CSS"],
+		githubUrl: "https://github.com/dodoshrey/basic-template-for-a-website",
+		demoUrl: "https://dodoshrey.github.io/basic-template-for-a-website/",
+		imageUrl: "/project_pic/basic_template.jpg"
+	},
+	{
+		title: "Animation using hover",
+		description: "Basic hover command is used to implement animation in this project",
+		tags: ["HTML", "CSS"],
+		githubUrl: "https://github.com/dodoshrey/Example-of-using-hover-command-HTML-CSS",
+		demoUrl: "https://dodoshrey.github.io/Example-of-using-hover-command-HTML-CSS/",
+		imageUrl: "/project_pic/hover_animation.jpg"
 	}
 ];
 
