@@ -53,7 +53,7 @@ const projects = [
 		imageUrl: "/project_pic/furniture_shop.jpg"
 	},
 	{
-		title: "Basic template for website",
+		title: "Basic Template for Website",
 		description: "A template/design for creating a webpage using HTML and CSS",
 		tags: ["HTML", "CSS"],
 		githubUrl: "https://github.com/dodoshrey/basic-template-for-a-website",
