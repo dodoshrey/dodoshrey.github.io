@@ -85,7 +85,7 @@ const Projects = () => {
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{projects.map((project, index) => (
-						<Card key={index} className="overflow-hidden h-full flex flex-col border-2 border-blue-500 transition-all duration-300 hover:[transform:scale(1.3)] hover:shadow-2xl bg-white" style={{ borderRadius: "1rem" }} >
+						<Card key={index} className="overflow-hidden h-full flex flex-col border-2 border-blue-500 transition-all duration-300 hover:shadow-2xl bg-white" style={{ borderRadius: "1rem" }} >
 							{project.imageUrl && (
 								<div className="h-48 overflow-hidden">
 									<img 
