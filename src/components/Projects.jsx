@@ -30,7 +30,7 @@ const projects = [
 	},
 	{
 		title: "Pig Game",
-		description: "Created a 2 player dice sum counting game using HTML, CSS, Javascript",
+		description: "Created a 2 player dice sum counting game using HTML, CSS, Javascript. The game is played by rolling a dice and accumulating points until one player reaches 100 points.",
 		tags: ["HTML", "CSS", "JS", "Responsive Design"],
 		githubUrl: "https://github.com/dodoshrey/pig-game",
 		demoUrl: "https://dodoshrey.github.io/pig-game/",
@@ -38,7 +38,7 @@ const projects = [
 	},
 	{
 		title: "DOM Manipulation Example",
-		description: "Made a shopping list example in which you can add new items or delete existing items",
+		description: "Made a shopping list example in which you can add new items or delete existing items.",
 		tags: ["HTML", "CSS", "JS"],
 		githubUrl: "https://github.com/dodoshrey/DOM-Manupulation-Example",
 		demoUrl: "https://dodoshrey.github.io/DOM-Manupulation-Example",
@@ -54,7 +54,7 @@ const projects = [
 	},
 	{
 		title: "Basic Template for Website",
-		description: "A template/design for creating a webpage using HTML and CSS",
+		description: "A template/design for creating a webpage using HTML and CSS. It includes a header, footer, and a main section with a simple layout.",
 		tags: ["HTML", "CSS"],
 		githubUrl: "https://github.com/dodoshrey/basic-template-for-a-website",
 		demoUrl: "https://dodoshrey.github.io/basic-template-for-a-website/",
@@ -62,7 +62,7 @@ const projects = [
 	},
 	{
 		title: "Animation Using Hover",
-		description: "Basic hover command is used to implement animation in this project",
+		description: "Basic hover command is used to implement animation in this project. It is a simple example of using hover effects to create animations on elements.",
 		tags: ["HTML", "CSS"],
 		githubUrl: "https://github.com/dodoshrey/Example-of-using-hover-command-HTML-CSS",
 		demoUrl: "https://dodoshrey.github.io/Example-of-using-hover-command-HTML-CSS/",
