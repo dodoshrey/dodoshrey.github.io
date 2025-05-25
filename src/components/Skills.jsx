@@ -1,5 +1,14 @@
-import React from 'react';
-import { Code, Database, Globe, Smartphone, Shield } from 'lucide-react';
+import { ArrowUp, Code, Database, Globe, Smartphone, Shield } from 'lucide-react';
+
+const scrollToTop = () => {
+	const element = document.getElementById('hero');
+	element?.scrollIntoView({ behavior: 'smooth' });
+};
+
+const scrollToExperience = () => {
+	const element = document.getElementById('experience');
+	element?.scrollIntoView({ behavior: 'smooth' });
+};
 
 const Skills = () => {
   const skillCategories = [
@@ -62,10 +71,12 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Skills & Expertise
           </h2>
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A comprehensive toolkit for building modern, scalable, and secure applications.
           </p>
@@ -74,6 +85,7 @@ const Skills = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <div key={index} className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+
               <div className="flex items-center mb-6">
                 <div className={`p-3 rounded-lg ${category.color === 'blue' ? 'bg-blue-100' : 
                   category.color === 'green' ? 'bg-green-100' :
@@ -95,6 +107,7 @@ const Skills = () => {
                   </span>
                 ))}
               </div>
+
             </div>
           ))}
         </div>
@@ -102,20 +115,41 @@ const Skills = () => {
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-8">Proficiency Highlights</h3>
           <div className="grid md:grid-cols-3 gap-8">
+
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
               <div className="text-3xl font-bold text-blue-600 mb-2">3+</div>
               <div className="text-gray-700">Years of Professional Experience</div>
             </div>
+
             <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl">
               <div className="text-3xl font-bold text-green-600 mb-2">20+</div>
               <div className="text-gray-700">Technologies Mastered</div>
             </div>
+
             <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl">
               <div className="text-3xl font-bold text-purple-600 mb-2">10+</div>
               <div className="text-gray-700">Projects Delivered</div>
             </div>
+
           </div>
         </div>
+
+        <div className="text-center mt-24">
+          <button
+            onClick={scrollToExperience}
+            className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
+          >
+            <ArrowUp size={40}  className="inline-block ml-2" /> Experience <ArrowUp size={40}  className="inline-block ml-2" />
+          </button>
+
+          <button
+            onClick={scrollToTop}
+            className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
+          >
+            <ArrowUp size={40}  className="inline-block ml-2" /> Back To Top <ArrowUp size={40}  className="inline-block ml-2" />
+          </button>
+        </div>
+
       </div>
     </section>
   );

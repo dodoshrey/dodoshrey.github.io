@@ -1,5 +1,20 @@
-import React from 'react';
-import { Briefcase, Calendar, ArrowRight } from 'lucide-react';
+import { ArrowDown, ArrowUp, Briefcase, Calendar, ArrowRight } from 'lucide-react';
+
+const scrollToTop = () => {
+  const element = document.getElementById('hero');
+  element?.scrollIntoView({ behavior: 'smooth' });
+};
+
+const scrollToProjects = () => {
+	const element = document.getElementById('projects');
+	element?.scrollIntoView({ behavior: 'smooth' });
+};
+
+const scrollToSkills = () => {
+	const element = document.getElementById('skills');
+	element?.scrollIntoView({ behavior: 'smooth' });
+};
+
 
 const Experience = () => {
   const experiences = [
@@ -72,13 +87,14 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
+    <section id="experience" className="py-20 bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Experience
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Professional Experience
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Building innovative solutions and driving impact through technology.
           </p>
         </div>
@@ -86,11 +102,14 @@ const Experience = () => {
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <div key={index} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
                 <div className="flex items-start space-x-4">
+
                   <div className="bg-blue-100 p-3 rounded-lg">
                     <Briefcase className="w-6 h-6 text-blue-600" />
                   </div>
+
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900">{exp.title}</h3>
                     <p className="text-xl text-blue-600 font-semibold">{exp.company}</p>
@@ -99,6 +118,7 @@ const Experience = () => {
                       <span>{exp.period} • {exp.location}</span>
                     </div>
                   </div>
+
                 </div>
               </div>
               
@@ -151,7 +171,33 @@ const Experience = () => {
               </div>
             </div>
           ))}
+
+          <div className="text-center mt-24">
+            <br /><br />
+            <button
+              onClick={scrollToProjects}
+              className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
+            >
+              <ArrowUp size={40}  className="inline-block ml-2" /> Projects <ArrowUp size={40}  className="inline-block ml-2" />
+            </button>
+
+            <button
+              onClick={scrollToSkills}
+              className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
+            >
+              <ArrowDown size={40}  className="inline-block ml-2" /> Skills <ArrowDown size={40}  className="inline-block ml-2" />
+            </button>
+            
+            <button
+              onClick={scrollToTop}
+              className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
+            >
+              <ArrowUp size={40}  className="inline-block ml-2" /> Back To Top <ArrowUp size={40}  className="inline-block ml-2" />
+            </button>
+          </div>
+
         </div>
+
       </div>
     </section>
   );

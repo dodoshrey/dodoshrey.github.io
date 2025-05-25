@@ -1,5 +1,4 @@
-import React from 'react';
-import { Github, ExternalLink } from 'lucide-react';
+import { ArrowDown, ArrowUp, Github, ExternalLink } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./ui/card";
 import { Button } from "./ui/button";
 
@@ -70,24 +69,45 @@ const projects = [
 	}
 ];
 
+const scrollToTop = () => {
+  const element = document.getElementById('hero');
+  element?.scrollIntoView({ behavior: 'smooth' });
+};
+
+const scrollToAbout = () => {
+	const element = document.getElementById('about');
+	element?.scrollIntoView({ behavior: 'smooth' });
+};
+
+const scrollToExperience = () => {
+	const element = document.getElementById('experience');
+	element?.scrollIntoView({ behavior: 'smooth' });
+};
+
 const Projects = () => {
 	return (
 		<section id="projects" className="py-20 bg-gray-50">
+
 			<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+				
 				<div className="text-center mb-16">
 					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-						My Projects
+						Personal Projects
 					</h2>
+
 					<p className="text-xl text-gray-600 max-w-3xl mx-auto">
 						Here are some of my noteworthy projects that showcase my technical skills and problem-solving abilities.
 					</p>
 				</div>
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					
 					{projects.map((project, index) => (
 						<Card key={index} className="overflow-hidden h-full flex flex-col border-2 border-blue-500 transition-all duration-300 hover:shadow-2xl bg-white" style={{ borderRadius: "1rem" }} >
+							
 							{project.imageUrl && (
 								<div className="h-48 overflow-hidden">
+
 									<img 
 										src={project.imageUrl} 
 										alt={project.title} 
@@ -95,8 +115,10 @@ const Projects = () => {
 									/>
 								</div>
 							)}
+
 							<CardHeader>
 								<CardTitle className="text-xl items-center text-center">{project.title}</CardTitle>
+
 								<CardDescription className="flex flex-wrap gap-2 mt-2">
 									{project.tags.map((tag, i) => (
 										<span key={i} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
@@ -105,16 +127,20 @@ const Projects = () => {
 									))}
 								</CardDescription>
 							</CardHeader>
+
 							<CardContent className="flex-grow items-center text-center">
 								<p className="text-gray-700">{project.description}</p>
 							</CardContent>
+
 							<CardFooter className="flex gap-3 pt-4">
+
 								<Button variant="outline" size="sm" asChild>
 									<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
 										<Github size={16} />
 										GitHub
 									</a>
 								</Button>
+
 								{project.demoUrl && (
 									<Button variant="outline" size="sm" asChild>
 										<a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
@@ -123,12 +149,15 @@ const Projects = () => {
 										</a>
 									</Button>
 								)}
+
 							</CardFooter>
+
 						</Card>
 					))}
 				</div>
 
 				<div className="text-center mt-12">
+
 					<Button variant="outline" size="lg" asChild>
 						<a 
 							href="https://github.com/dodoshrey" 
@@ -140,8 +169,36 @@ const Projects = () => {
 							View More on GitHub
 						</a>
 					</Button>
+
 				</div>
+
+				<div className="text-center mt-24">
+
+					<button
+						onClick={scrollToAbout}
+						className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
+					>
+						<ArrowUp size={40}  className="inline-block ml-2" /> About Me <ArrowUp size={40}  className="inline-block ml-2" />
+					</button>
+
+					<button
+						onClick={scrollToExperience}
+						className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
+					>
+						<ArrowDown size={40}  className="inline-block ml-2" /> Experience <ArrowDown size={40}  className="inline-block ml-2" />
+					</button>
+					
+					<button
+						onClick={scrollToTop}
+						className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
+					>
+						<ArrowUp size={40}  className="inline-block ml-2" /> Back To Top <ArrowUp size={40}  className="inline-block ml-2" />
+					</button>
+
+				</div>
+
 			</div>
+
 		</section>
 	);
 };
