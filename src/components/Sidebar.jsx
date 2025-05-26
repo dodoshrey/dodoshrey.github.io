@@ -127,7 +127,7 @@ const Sidebar = () => {
                                     Download Resume
                                 </a>
                             </button>
-                        </div><br />
+                        </div>
                         {/* Theme Toggle Button */}
                         <div className="flex justify-center my-4">
                             <button
