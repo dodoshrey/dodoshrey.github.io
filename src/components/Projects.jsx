@@ -1,15 +1,26 @@
+import { useState } from "react";
 import { Github, ExternalLink } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./ui/card";
 import { Button } from "./ui/button";
+import Modal from "./ui/Modal";
 
 const projects = [
-	{
+  // ...existing project objects...
+  // Add a `screenshots` or `videoUrl` property to any project if you want
+  // Example:
+  // {
+  //   ...,
+  //   screenshots: ["/project_pic/tic_tac_toe_1.jpg", "/project_pic/tic_tac_toe_2.jpg"],
+  //   videoUrl: "https://www.youtube.com/embed/your-demo-video"
+  // }
+  	{
 		title: "Tic Tac Toe",
 		description: "Created Tic Tac Toe, a fun 2 player game with ReactJS.",
 		tags: ["ReactJS", "JavaScript", "CSS"],
 		githubUrl: "https://github.com/dodoshrey/tic-tac-toe",
 		demoUrl: "https://dodoshrey.github.io/tic-tac-toe/",
-		imageUrl: "/project_pic/tic_tac_toe.jpg"
+		imageUrl: "/project_pic/tic_tac_toe.jpg",
+		screenshots: ["/project_pic/tic_tac_toe.jpg"]
 	},
 	{
 		title: "Robot Name Search App",
@@ -70,95 +81,148 @@ const projects = [
 ];
 
 const Projects = () => {
+	const [selectedProject, setSelectedProject] = useState(null);
+
 	return (
 		<section id="projects" className="min-h-[100vh] py-20 bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
-
 			<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-				
 				<div className="text-center mb-16">
 					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
 						Personal Projects
 					</h2>
-
 					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
 						Here are some of my noteworthy projects that showcase my technical skills and problem-solving abilities.
 					</p>
 				</div>
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-					
 					{projects.map((project, index) => (
-						<Card key={index} className="overflow-hidden h-full flex flex-col border-2 border-blue-500 dark:border-blue-400 transition-all duration-300 hover:shadow-2xl bg-white dark:bg-gray-800" style={{ borderRadius: "1rem" }} >
-							
+						<Card
+							key={index}
+							className="overflow-hidden h-full flex flex-col border-2 border-blue-500 dark:border-blue-400 transition-all duration-300 hover:shadow-2xl bg-white dark:bg-gray-800 cursor-pointer items-center text-center"
+							style={{ borderRadius: "1rem" }}
+							onClick={() => setSelectedProject(project)}
+						>
 							{project.imageUrl && (
-								<div className="h-48 overflow-hidden">
-
-									<img 
-										src={project.imageUrl} 
-										alt={project.title} 
-										className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+								<div className="h-48 overflow-hidden flex justify-center items-center w-full">
+									<img
+									src={project.imageUrl}
+									alt={project.title}
+									className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
 									/>
 								</div>
 							)}
 
-							<CardHeader>
+							<CardHeader className="w-full flex flex-col items-center text-center">
 								<CardTitle className="text-xl items-center text-center">{project.title}</CardTitle>
-
-								<CardDescription className="flex flex-wrap gap-2 mt-2">
+								<CardDescription className="flex flex-wrap gap-2 mt-2 justify-center">
 									{project.tags.map((tag, i) => (
-										<span key={i} className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded-full">
+										<span key={i} className="bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded-full">
 											{tag}
 										</span>
 									))}
 								</CardDescription>
 							</CardHeader>
 
-							<CardContent className="flex-grow items-center text-center">
+							<CardContent className="flex-grow flex flex-col items-center justify-center text-center">
 								<p className="text-gray-700 dark:text-gray-200">{project.description}</p>
 							</CardContent>
 
-							<CardFooter className="flex gap-3 pt-4">
-
-								<Button variant="outline" size="sm" asChild>
+							<CardFooter className="flex gap-3 pt-4 justify-center w-full">
+								<Button className="bg-blue-200 dark:bg-blue-900" variant="outline" size="sm" asChild>
 									<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
 										<Github size={16} />
 										GitHub
 									</a>
 								</Button>
-
 								{project.demoUrl && (
-									<Button variant="outline" size="sm" asChild>
+									<Button className="bg-blue-200 dark:bg-blue-900" variant="outline" size="sm" asChild>
 										<a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
 											<ExternalLink size={16} />
 											Live Demo
 										</a>
 									</Button>
 								)}
-
 							</CardFooter>
-
+							<br />
 						</Card>
 					))}
 				</div>
 
 				<div className="text-center mt-12">
-
 					<Button variant="outline" size="lg" asChild>
-						<a 
-							href="https://github.com/dodoshrey" 
-							target="_blank" 
-							rel="noopener noreferrer"
-							className="flex items-center gap-2"
+						<a
+						href="https://github.com/dodoshrey"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="flex items-center gap-2"
 						>
 							<Github size={20} />
 							View More on GitHub
 						</a>
 					</Button>
-
 				</div>
-
 			</div>
 
+			{/* Modal for Project Details */}
+				<Modal open={!!selectedProject} onClose={() => setSelectedProject(null)}>
+					{selectedProject && (
+						<div>
+						<h2 className="text-2xl font-bold mb-2 text-center">{selectedProject.title}</h2>
+
+						<div className="flex flex-wrap gap-2 mb-4 justify-center">
+							{selectedProject.tags.map((tag, i) => (
+								<span key={i} className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded-full">
+									{tag}
+								</span>
+							))}
+						</div>
+
+						<p className="mb-4 text-gray-700 dark:text-gray-200 text-center">{selectedProject.description}</p>
+
+						{/* Screenshots */}
+						{selectedProject.screenshots && (
+							<div className="mb-4 flex gap-4 overflow-x-auto justify-center">
+								{selectedProject.screenshots.map((src, i) => (
+									<img key={i} src={src} alt={`Screenshot ${i + 1}`} className="h-120 rounded-lg border" />
+								))}
+							</div>
+						)}
+
+						{/* Video Demo */}
+						{selectedProject.videoUrl && (
+							<div className="mb-4 flex justify-center">
+								<iframe
+									src={selectedProject.videoUrl}
+									title="Project Video Demo"
+									width="100%"
+									height="315"
+									className="rounded-lg"
+									allow="autoplay; encrypted-media"
+									allowFullScreen>
+								</iframe>
+							</div>
+						)}
+
+						<div className="flex gap-3 mt-4 justify-center">
+							<Button variant="outline" size="sm" asChild>
+								<a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+									<Github size={16} />
+									GitHub
+								</a>
+							</Button>
+							{selectedProject.demoUrl && (
+								<Button variant="outline" size="sm" asChild>
+									<a href={selectedProject.demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+										<ExternalLink size={16} />
+										Live Demo
+									</a>
+								</Button>
+							)}
+						</div>
+					</div>
+				)}
+			</Modal>
 		</section>
 	);
 };
