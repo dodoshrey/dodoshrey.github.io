@@ -152,7 +152,7 @@ const Projects = () => {
 			{/* Modal for Project Details */}
 			<Modal open={!!selectedProject} onClose={() => setSelectedProject(null)} ariaLabel={selectedProject ? selectedProject.title : "Project Details"}>
 				{selectedProject && (
-					<div>
+					<div className="rounded-xl p-6">
 						<h2 className="text-2xl font-mono font-bold mb-2 text-center">{selectedProject.title}</h2>
 
 						<div className="font-mono flex flex-wrap gap-2 mb-4 justify-center">

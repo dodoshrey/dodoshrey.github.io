@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Menu, X, Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 import { useTheme } from "next-themes";
 
@@ -41,63 +41,88 @@ const scrollToSection = (sectionId, closeMenu) => {
 };
 
 // Sidebar open button component
-function SidebarOpenButton({ className, onClick }) {
-	return (
-		<button
-			className={`fixed bottom-6 left-6 z-50 bg-blue-700 text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 ${className}`}
-			onClick={onClick}
-			aria-label="Open sidebar"
-			tabIndex={0}
-		>
-			<Menu size={28} />
-		</button>
-	);
-}
+const SidebarOpenButton = React.forwardRef(({ className, onClick }, ref) => (
+    <button
+        ref={ref}
+        className={`fixed bottom-6 left-6 z-50 bg-blue-700 text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 ${className}`}
+        onClick={onClick}
+        aria-label="Open sidebar"
+        tabIndex={0}
+    >
+        <Menu size={28} />
+    </button>
+));
 
 const Sidebar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const { theme, setTheme, resolvedTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
     const desktopSidebarRef = useRef(null);
+    const mobileSidebarRef = useRef(null);
+    const openButtonRef = useRef(null);
 
     useEffect(() => {
         setMounted(true);
     }, []);
 
-    // Keyboard navigation: close on Escape
+    // Focus trap logic
     useEffect(() => {
         if (!isSidebarOpen) return;
 
-        function handleKeyDown(event) {
-            if (event.key === "Escape") {
+        // Determine which sidebar is open
+        const sidebarRef = window.innerWidth >= 768 ? desktopSidebarRef : mobileSidebarRef;
+        const sidebar = sidebarRef.current;
+        if (!sidebar) return;
+
+        // Get all focusable elements inside sidebar
+        const focusableSelectors = [
+            'a[href]',
+            'button:not([disabled])',
+            'input:not([disabled])',
+            'select:not([disabled])',
+            'textarea:not([disabled])',
+            '[tabindex]:not([tabindex="-1"])'
+        ];
+        const focusableEls = sidebar.querySelectorAll(focusableSelectors.join(','));
+        const focusable = Array.from(focusableEls);
+
+        // Focus the first element
+        if (focusable.length) focusable[0].focus();
+
+        function handleKeyDown(e) {
+            if (e.key === 'Tab') {
+                if (focusable.length === 0) return;
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (e.shiftKey) {
+                    // Shift+Tab
+                    if (document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    }
+                } else {
+                    // Tab
+                    if (document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                }
+            }
+            if (e.key === "Escape") {
                 setIsSidebarOpen(false);
             }
         }
+
         document.addEventListener("keydown", handleKeyDown);
         return () => {
             document.removeEventListener("keydown", handleKeyDown);
         };
     }, [isSidebarOpen]);
 
-    // Only attach outside click for desktop sidebar
+    // Restore focus to open button when sidebar closes
     useEffect(() => {
-        if (!isSidebarOpen) return;
-
-        function handleClickOutside(event) {
-            if (
-                desktopSidebarRef.current &&
-                !desktopSidebarRef.current.contains(event.target)
-            ) {
-                setIsSidebarOpen(false);
-            }
-        }
-
-        // Only add listener if desktop sidebar is visible
-        if (window.innerWidth >= 768) {
-            document.addEventListener('mousedown', handleClickOutside);
-            return () => {
-                document.removeEventListener('mousedown', handleClickOutside);
-            };
+        if (!isSidebarOpen && openButtonRef.current) {
+            openButtonRef.current.focus();
         }
     }, [isSidebarOpen]);
 
@@ -205,6 +230,7 @@ const Sidebar = () => {
                     />
                     {/* Drawer */}
                     <aside
+                        ref={mobileSidebarRef}
                         className="relative w-4/5 max-w-xs bg-black/90 backdrop-blur shadow-xl flex flex-col justify-between border-r border-blue-300 animate-slide-in-left"
                         tabIndex={-1}
                         role="navigation"
@@ -302,16 +328,18 @@ const Sidebar = () => {
 					<SidebarOpenButton
 						className="hidden md:flex"
 						onClick={() => setIsSidebarOpen(true)}
+						ref={openButtonRef}
 					/>
 					{/* Mobile */}
 					<SidebarOpenButton
 						className="md:hidden"
 						onClick={() => setIsSidebarOpen(true)}
+						ref={openButtonRef}
 					/>
 				</>
-			)}
-		</>
-	);
+            )}
+        </>
+    );
 };
 
 export default Sidebar;
