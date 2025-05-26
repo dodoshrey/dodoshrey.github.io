@@ -71,7 +71,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="min-h-[100vh] py-20 bg-gray-900 flex items-center justify-center">
+    <section id="experience" className="min-h-[100vh] py-20 bg-gray-900 dark:bg-gray-950 flex items-center justify-center">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
@@ -85,19 +85,19 @@ const Experience = () => {
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+            <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
 
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
                 <div className="flex items-start space-x-4">
 
-                  <div className="bg-blue-100 p-3 rounded-lg">
-                    <Briefcase className="w-6 h-6 text-blue-600" />
+                  <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-lg">
+                    <Briefcase className="w-6 h-6 text-blue-600 dark:text-blue-300" />
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900">{exp.title}</h3>
-                    <p className="text-xl text-blue-600 font-semibold">{exp.company}</p>
-                    <div className="flex items-center text-gray-600 mt-2">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{exp.title}</h3>
+                    <p className="text-xl text-blue-600 dark:text-blue-400 font-semibold">{exp.company}</p>
+                    <div className="flex items-center text-gray-600 dark:text-gray-300 mt-2">
                       <Calendar className="w-4 h-4 mr-2" />
                       <span>{exp.period} • {exp.location}</span>
                     </div>
@@ -106,17 +106,17 @@ const Experience = () => {
                 </div>
               </div>
               
-              <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-200 text-lg mb-6 leading-relaxed">
                 {exp.description}
               </p>
               
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Achievements:</h4>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Key Achievements:</h4>
                 <ul className="space-y-2">
                   {exp.achievements.map((achievement, i) => (
                     <li key={i} className="flex items-start">
-                      <ArrowRight className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700">{achievement}</span>
+                      <ArrowRight className="w-5 h-5 text-green-500 dark:text-green-300 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 dark:text-gray-200">{achievement}</span>
                     </li>
                   ))}
                 </ul>
@@ -124,16 +124,16 @@ const Experience = () => {
               
               {exp.projects && (
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Projects:</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Projects:</h4>
                   <div className="space-y-4">
                     {exp.projects.map((project, i) => (
-                      <div key={i} className="bg-gray-50 p-4 rounded-md">
-                        <h5 className="font-semibold text-blue-700 mb-2">{project.name}</h5>
+                      <div key={i} className="bg-gray-50 dark:bg-gray-900 p-4 rounded-md">
+                        <h5 className="font-semibold text-blue-700 dark:text-blue-400 mb-2">{project.name}</h5>
                         <ul className="space-y-1">
                           {project.details.map((detail, j) => (
                             <li key={j} className="flex items-start">
-                              <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                              <span className="text-gray-700 text-sm">{detail}</span>
+                              <div className="w-2 h-2 bg-blue-500 dark:bg-blue-400 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                              <span className="text-gray-700 dark:text-gray-200 text-sm">{detail}</span>
                             </li>
                           ))}
                         </ul>
@@ -144,10 +144,10 @@ const Experience = () => {
               )}
               
               <div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Technologies:</h4>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Technologies:</h4>
                 <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech, i) => (
-                    <span key={i} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    <span key={i} className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">
                       {tech}
                     </span>
                   ))}

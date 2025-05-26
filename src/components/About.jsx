@@ -2,7 +2,7 @@ import { Code, Users, Zap } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="min-h-[100vh] py-20 bg-gray-900 flex items-center justify-center">
+    <section id="about" className="min-h-[100vh] py-20 bg-gray-900 dark:bg-gray-950 flex items-center justify-center">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
@@ -42,22 +42,22 @@ const About = () => {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
-              <div className="text-center p-6 bg-blue-50 rounded-lg">
-                <Code className="w-8 h-8 text-blue-600 mx-auto mb-3" />
-                <h3 className="font-semibold text-gray-900">Clean Code</h3>
-                <p className="text-sm text-gray-600 mt-2">Writing maintainable, scalable solutions</p>
+              <div className="text-center p-6 bg-blue-50 dark:bg-blue-900 rounded-lg">
+                <Code className="w-8 h-8 text-blue-600 dark:text-blue-300 mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 dark:text-white">Clean Code</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Writing maintainable, scalable solutions</p>
               </div>
               
-              <div className="text-center p-6 bg-purple-50 rounded-lg">
-                <Users className="w-8 h-8 text-purple-600 mx-auto mb-3" />
-                <h3 className="font-semibold text-gray-900">Collaboration</h3>
-                <p className="text-sm text-gray-600 mt-2">Working seamlessly across teams</p>
+              <div className="text-center p-6 bg-purple-50 dark:bg-purple-900 rounded-lg">
+                <Users className="w-8 h-8 text-purple-600 dark:text-purple-300 mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 dark:text-white">Collaboration</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Working seamlessly across teams</p>
               </div>
               
-              <div className="text-center p-6 bg-green-50 rounded-lg">
-                <Zap className="w-8 h-8 text-green-600 mx-auto mb-3" />
-                <h3 className="font-semibold text-gray-900">Performance</h3>
-                <p className="text-sm text-gray-600 mt-2">Optimizing for speed and efficiency</p>
+              <div className="text-center p-6 bg-green-50 dark:bg-green-900 rounded-lg">
+                <Zap className="w-8 h-8 text-green-600 dark:text-green-300 mx-auto mb-3" />
+                <h3 className="font-semibold text-gray-900 dark:text-white">Performance</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Optimizing for speed and efficiency</p>
               </div>
             </div>
 

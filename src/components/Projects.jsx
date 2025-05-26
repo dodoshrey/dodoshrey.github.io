@@ -71,16 +71,16 @@ const projects = [
 
 const Projects = () => {
 	return (
-		<section id="projects" className="min-h-[100vh] py-20 bg-gray-50 flex items-center justify-center">
+		<section id="projects" className="min-h-[100vh] py-20 bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
 
 			<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 				
 				<div className="text-center mb-16">
-					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
 						Personal Projects
 					</h2>
 
-					<p className="text-xl text-gray-600 max-w-3xl mx-auto">
+					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
 						Here are some of my noteworthy projects that showcase my technical skills and problem-solving abilities.
 					</p>
 				</div>
@@ -88,7 +88,7 @@ const Projects = () => {
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 					
 					{projects.map((project, index) => (
-						<Card key={index} className="overflow-hidden h-full flex flex-col border-2 border-blue-500 transition-all duration-300 hover:shadow-2xl bg-white" style={{ borderRadius: "1rem" }} >
+						<Card key={index} className="overflow-hidden h-full flex flex-col border-2 border-blue-500 dark:border-blue-400 transition-all duration-300 hover:shadow-2xl bg-white dark:bg-gray-800" style={{ borderRadius: "1rem" }} >
 							
 							{project.imageUrl && (
 								<div className="h-48 overflow-hidden">
@@ -106,7 +106,7 @@ const Projects = () => {
 
 								<CardDescription className="flex flex-wrap gap-2 mt-2">
 									{project.tags.map((tag, i) => (
-										<span key={i} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
+										<span key={i} className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded-full">
 											{tag}
 										</span>
 									))}
@@ -114,7 +114,7 @@ const Projects = () => {
 							</CardHeader>
 
 							<CardContent className="flex-grow items-center text-center">
-								<p className="text-gray-700">{project.description}</p>
+								<p className="text-gray-700 dark:text-gray-200">{project.description}</p>
 							</CardContent>
 
 							<CardFooter className="flex gap-3 pt-4">

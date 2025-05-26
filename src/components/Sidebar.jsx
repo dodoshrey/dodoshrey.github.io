@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
+import { useTheme } from "next-themes";
 
 const navLinks = [
 	{ label: 'Home', section: 'hero' },
@@ -31,11 +32,8 @@ const socialLinks = [
 const scrollToSection = (sectionId, closeMenu) => {
 	const element = document.getElementById(sectionId);
 	if (element) {
-		const headerOffset = 0;
-		const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-		const offsetPosition = elementPosition - headerOffset;
 		window.scrollTo({
-			top: offsetPosition,
+			top: element.getBoundingClientRect().top + window.pageYOffset,
 			behavior: 'smooth',
 		});
 	}
@@ -56,79 +54,91 @@ function SidebarOpenButton({ className, onClick }) {
 }
 
 const Sidebar = () => {
-	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const { theme, setTheme } = useTheme();
 
-	return (
-		<>
-			{/* Desktop Sidebar */}
-			{isSidebarOpen && (
-				<aside className="hidden md:flex fixed top-0 left-0 h-full w-64 bg-black/40 backdrop-blur shadow-xl z-50 flex-col justify-between border-r border-blue-200">
-					<div>
-						{/* Close Button */}
-						<button
-							className="absolute top-4 right-4 text-white hover:text-blue-600 transition-colors"
-							onClick={() => setIsSidebarOpen(false)}
-							aria-label="Close sidebar"
-						>
-							<X size={28} />
-						</button>
-            <br /><br />
-						<div
-							className="flex items-center justify-center h-24 text-3xl font-bold text-white tracking-wide hover:text-blue-600 transition-colors"
-							onClick={() => scrollToSection('hero')}
-						>
-							Portfolio
-						</div>
-						{/* Navigation */}
-						<nav className="flex flex-col gap-2 mt-10 px-6">
-							{navLinks.map((link) => (
-								<button
-									key={link.section}
-									onClick={() => scrollToSection(link.section)}
-									className="text-lg text-white hover:text-blue-600 py-3 px-4 rounded-lg transition-colors text-left font-medium hover:bg-blue-50"
-								>
-									{link.label}
-								</button>
-							))}
-						</nav>
-					</div>
-					{/* Social Links */}
-					<div className="flex flex-row items-center gap-4 mb-8 px-16">
-						{socialLinks.map(({ href, icon: Icon, label }) => (
-							<a
-								key={label}
-								href={href}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-white hover:text-blue-600 transition-colors"
-								aria-label={label}
-							>
-								<Icon size={24} />
-							</a>
-						))}
-					</div>
-				</aside>
-			)}
+    return (
+        <>
+            {/* Desktop Sidebar */}
+            {isSidebarOpen && (
+                <aside className="hidden md:flex fixed top-0 left-0 h-full w-64 bg-black/40 backdrop-blur shadow-xl z-50 flex-col justify-between border-r border-blue-200">
+                    <div>
+                        {/* Close Button */}
+                        <button
+                            className="absolute top-4 right-4 text-white hover:text-blue-600 transition-colors"
+                            onClick={() => setIsSidebarOpen(false)}
+                            aria-label="Close sidebar"
+                        >
+                            <X size={28} />
+                        </button>
+                        <br /><br />
+                        <div
+                            className="flex items-center justify-center h-24 text-3xl font-bold text-white tracking-wide hover:text-blue-600 transition-colors"
+                            onClick={() => scrollToSection('hero')}
+                        >
+                            Portfolio
+                        </div>
+                        {/* Theme Toggle Button */}
+                        {/* Navigation */}
+                        <nav className="flex flex-col gap-2 mt-10 px-6">
+                            {navLinks.map((link) => (
+                                <button
+                                    key={link.section}
+                                    onClick={() => scrollToSection(link.section)}
+                                    className="text-lg text-white hover:text-blue-600 py-3 px-4 rounded-lg transition-colors text-left font-medium hover:bg-blue-50"
+                                >
+                                    {link.label}
+                                </button>
+                            ))}
+                        </nav><br /><br /><br />
+                        <div className="flex justify-center my-4">
+                            <button
+                                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+                                aria-label="Toggle theme"
+                            >
+                                {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+                                <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
+                            </button>
+                        </div>
+                    </div>
+                    {/* Social Links */}
+                    <div className="flex flex-row items-center gap-4 mb-8 px-16">
+                        {socialLinks.map(({ href, icon: Icon, label }) => (
+                            <a
+                                key={label}
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white hover:text-blue-600 transition-colors"
+                                aria-label={label}
+                            >
+                                <Icon size={24} />
+                            </a>
+                        ))}
+                    </div>
+                </aside>
+            )}
 
-			{/* Mobile Drawer Sidebar */}
-			{isSidebarOpen && (
-				<div className="md:hidden fixed inset-0 z-50 flex">
-					{/* Overlay */}
-					<div
-						className="fixed inset-0 bg-black/40 backdrop-blur-sm"
-						onClick={() => setIsSidebarOpen(false)}
-					/>
-					{/* Drawer */}
-					<aside className="relative w-4/5 max-w-xs bg-black/40 backdrop-blur shadow-xl flex flex-col justify-between border-r border-blue-200 animate-slide-in-left">
-						<div>
-							{/* Close Button */}
-							<button
-								className="absolute top-4 right-4 text-white"
-								onClick={() => setIsSidebarOpen(false)}
-								aria-label="Close sidebar"
-							>
-								<X size={28} />
-							</button>
+            {/* Mobile Drawer Sidebar */}
+            {isSidebarOpen && (
+                <div className="md:hidden fixed inset-0 z-50 flex">
+                    {/* Overlay */}
+                    <div
+                        className="fixed inset-0 bg-black/40 backdrop-blur-sm"
+                        onClick={() => setIsSidebarOpen(false)}
+                    />
+                    {/* Drawer */}
+                    <aside className="relative w-4/5 max-w-xs bg-black/40 backdrop-blur shadow-xl flex flex-col justify-between border-r border-blue-200 animate-slide-in-left">
+                        <div>
+                            {/* Close Button */}
+                            <button
+                                className="absolute top-4 right-4 text-white"
+                                onClick={() => setIsSidebarOpen(false)}
+                                aria-label="Close sidebar"
+                            >
+                                <X size={28} />
+                            </button>
               <br /><br />
 							<div
 								className="flex items-center justify-center h-24 text-3xl font-bold text-white"
@@ -149,7 +159,18 @@ const Sidebar = () => {
 										{link.label}
 									</button>
 								))}
-							</nav>
+							</nav><br /><br /><br />
+							{/* Theme Toggle Button */}
+							<div className="flex justify-center my-4">
+								<button
+									onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+									className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+									aria-label="Toggle theme"
+								>
+									{theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+									<span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
+								</button>
+							</div>
 						</div>
 						{/* Social Links */}
 						<div className="flex flex-row items-center gap-4 mb-8 px-8">
