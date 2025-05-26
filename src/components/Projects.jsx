@@ -20,7 +20,7 @@ const projects = [
 		githubUrl: "https://github.com/dodoshrey/tic-tac-toe",
 		demoUrl: "https://dodoshrey.github.io/tic-tac-toe/",
 		imageUrl: "/project_pic/tic_tac_toe.jpg",
-		screenshots: ["/project_pic/tic_tac_toe.jpg"]
+	    videoUrl: "/project_video/tic_tac_toe.mp4"
 	},
 	{
 		title: "Robot Name Search App",
@@ -29,7 +29,7 @@ const projects = [
 		githubUrl: "https://github.com/dodoshrey/robots",
 		demoUrl: "https://dodoshrey.github.io/robots",
 		imageUrl: "/project_pic/robots.jpg",
-		screenshots: ["/project_pic/robots.jpg"]
+		videoUrl: "/project_video/robots.mp4"
 	},
 	{
 		title: "Budget Calculator",
@@ -38,7 +38,7 @@ const projects = [
 		githubUrl: "https://github.com/dodoshrey/budget-calculator-app",
 		demoUrl: "https://dodoshrey.github.io/budget-calculator-app/",
 		imageUrl: "/project_pic/budget_calculator.jpg",
-		screenshots: ["/project_pic/budget_calculator.jpg"]
+		videoUrl: "/project_video/budget_calculator.mp4"
 	},
 	{
 		title: "Pig Game",
@@ -47,7 +47,7 @@ const projects = [
 		githubUrl: "https://github.com/dodoshrey/pig-game",
 		demoUrl: "https://dodoshrey.github.io/pig-game/",
 		imageUrl: "/project_pic/pig_game.jpg",
-		screenshots: ["/project_pic/pig_game.jpg"]
+		videoUrl: "/project_video/pig_game.mp4"
 	},
 	{
 		title: "DOM Manipulation Example",
@@ -56,7 +56,7 @@ const projects = [
 		githubUrl: "https://github.com/dodoshrey/DOM-Manupulation-Example",
 		demoUrl: "https://dodoshrey.github.io/DOM-Manupulation-Example",
 		imageUrl: "/project_pic/DOM_Manipulation.jpg",
-		screenshots: ["/project_pic/DOM_Manipulation.jpg"]
+		videoUrl: "/project_video/DOM_Manipulation.mp4"
 	},
 	{
 		title: "Furniture Shopping Site",
@@ -65,7 +65,7 @@ const projects = [
 		githubUrl: "https://github.com/dodoshrey/first-site",
 		demoUrl: "https://dodoshrey.github.io/first-site/",
 		imageUrl: "/project_pic/furniture_shop.jpg",
-		screenshots: ["/project_pic/furniture_shop.jpg"]
+		videoUrl: "/project_video/furniture_shop.mp4"
 	},
 	{
 		title: "Basic Template for Website",
@@ -74,7 +74,7 @@ const projects = [
 		githubUrl: "https://github.com/dodoshrey/basic-template-for-a-website",
 		demoUrl: "https://dodoshrey.github.io/basic-template-for-a-website/",
 		imageUrl: "/project_pic/basic_template.jpg",
-		screenshots: ["/project_pic/basic_template.jpg"]
+		videoUrl: "/project_video/basic_template.mp4"
 	},
 	{
 		title: "Animation Using Hover",
@@ -83,7 +83,7 @@ const projects = [
 		githubUrl: "https://github.com/dodoshrey/Example-of-using-hover-command-HTML-CSS",
 		demoUrl: "https://dodoshrey.github.io/Example-of-using-hover-command-HTML-CSS/",
 		imageUrl: "/project_pic/hover_animation.jpg",
-		screenshots: ["/project_pic/hover_animation.jpg"]
+		videoUrl: "/project_video/hover_animation.mp4"
 	}
 ];
 
