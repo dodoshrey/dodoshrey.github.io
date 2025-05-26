@@ -5,11 +5,6 @@ const scrollToTop = () => {
 	element?.scrollIntoView({ behavior: 'smooth' });
 };
 
-const scrollToExperience = () => {
-	const element = document.getElementById('experience');
-	element?.scrollIntoView({ behavior: 'smooth' });
-};
-
 const Skills = () => {
   const skillCategories = [
     {
@@ -135,13 +130,6 @@ const Skills = () => {
         </div>
 
         <div className="text-center mt-24">
-          <button
-            onClick={scrollToExperience}
-            className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
-          >
-            <ArrowUp size={40}  className="inline-block ml-2" /> Experience <ArrowUp size={40}  className="inline-block ml-2" />
-          </button>
-
           <button
             onClick={scrollToTop}
             className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"

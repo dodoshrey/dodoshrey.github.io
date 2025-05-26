@@ -1,14 +1,4 @@
-import { ArrowDown, ArrowUp, Code, Users, Zap } from 'lucide-react';
-
-const scrollToTop = () => {
-  const element = document.getElementById('hero');
-  element?.scrollIntoView({ behavior: 'smooth' });
-};
-
-const scrollToProjects = () => {
-  const element = document.getElementById('projects');
-  element?.scrollIntoView({ behavior: 'smooth' });
-};
+import { Code, Users, Zap } from 'lucide-react';
 
 const About = () => {
   return (
@@ -74,25 +64,6 @@ const About = () => {
           </div>
 
         </div>
-
-        <div className="text-center mt-24">
-
-          <button
-            onClick={scrollToProjects}
-            className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
-          >
-            <ArrowDown size={40}  className="inline-block ml-2" /> Projects <ArrowDown size={40}  className="inline-block ml-2" />
-          </button>
-
-          <button
-            onClick={scrollToTop}
-            className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
-          >
-            <ArrowUp size={40}  className="inline-block ml-2" /> Back To Top <ArrowUp size={40}  className="inline-block ml-2" />
-          </button>
-
-        </div>
-
       </div>
     </section>
   );

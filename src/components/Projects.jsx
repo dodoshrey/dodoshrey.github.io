@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUp, Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./ui/card";
 import { Button } from "./ui/button";
 
@@ -68,21 +68,6 @@ const projects = [
 		imageUrl: "/project_pic/hover_animation.jpg"
 	}
 ];
-
-const scrollToTop = () => {
-  const element = document.getElementById('hero');
-  element?.scrollIntoView({ behavior: 'smooth' });
-};
-
-const scrollToAbout = () => {
-	const element = document.getElementById('about');
-	element?.scrollIntoView({ behavior: 'smooth' });
-};
-
-const scrollToExperience = () => {
-	const element = document.getElementById('experience');
-	element?.scrollIntoView({ behavior: 'smooth' });
-};
 
 const Projects = () => {
 	return (
@@ -169,31 +154,6 @@ const Projects = () => {
 							View More on GitHub
 						</a>
 					</Button>
-
-				</div>
-
-				<div className="text-center mt-24">
-
-					<button
-						onClick={scrollToAbout}
-						className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
-					>
-						<ArrowUp size={40}  className="inline-block ml-2" /> About Me <ArrowUp size={40}  className="inline-block ml-2" />
-					</button>
-
-					<button
-						onClick={scrollToExperience}
-						className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
-					>
-						<ArrowDown size={40}  className="inline-block ml-2" /> Experience <ArrowDown size={40}  className="inline-block ml-2" />
-					</button>
-					
-					<button
-						onClick={scrollToTop}
-						className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
-					>
-						<ArrowUp size={40}  className="inline-block ml-2" /> Back To Top <ArrowUp size={40}  className="inline-block ml-2" />
-					</button>
 
 				</div>
 

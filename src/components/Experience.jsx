@@ -1,20 +1,4 @@
-import { ArrowDown, ArrowUp, Briefcase, Calendar, ArrowRight } from 'lucide-react';
-
-const scrollToTop = () => {
-  const element = document.getElementById('hero');
-  element?.scrollIntoView({ behavior: 'smooth' });
-};
-
-const scrollToProjects = () => {
-	const element = document.getElementById('projects');
-	element?.scrollIntoView({ behavior: 'smooth' });
-};
-
-const scrollToSkills = () => {
-	const element = document.getElementById('skills');
-	element?.scrollIntoView({ behavior: 'smooth' });
-};
-
+import { Briefcase, Calendar, ArrowRight } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
@@ -172,32 +156,7 @@ const Experience = () => {
             </div>
           ))}
 
-          <div className="text-center mt-24">
-            <br /><br />
-            <button
-              onClick={scrollToProjects}
-              className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
-            >
-              <ArrowUp size={40}  className="inline-block ml-2" /> Projects <ArrowUp size={40}  className="inline-block ml-2" />
-            </button>
-
-            <button
-              onClick={scrollToSkills}
-              className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
-            >
-              <ArrowDown size={40}  className="inline-block ml-2" /> Skills <ArrowDown size={40}  className="inline-block ml-2" />
-            </button>
-            
-            <button
-              onClick={scrollToTop}
-              className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
-            >
-              <ArrowUp size={40}  className="inline-block ml-2" /> Back To Top <ArrowUp size={40}  className="inline-block ml-2" />
-            </button>
-          </div>
-
         </div>
-
       </div>
     </section>
   );

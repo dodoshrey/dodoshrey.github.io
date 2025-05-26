@@ -1,10 +1,3 @@
-import { ArrowDown } from 'lucide-react';
-
-const scrollToAbout = () => {
-  const element = document.getElementById('about');
-  element?.scrollIntoView({ behavior: 'smooth' });
-};
-
 const Hero = () => {
   return (
     <section id="hero" className="min-h-[100vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50">
@@ -43,16 +36,6 @@ const Hero = () => {
             </button>
             
           </div>
-          
-          <br /><br />
-
-          <button 
-            onClick={scrollToAbout}
-            className="animate-bounce text-gray-400 hover:text-blue-600 transition-colors"
-          >
-            <ArrowDown size={40}  className="inline-block ml-2" /> About Me <ArrowDown size={40}  className="inline-block ml-2" />
-          </button>
-
         </div>
       </div>
     </section>
