@@ -28,7 +28,8 @@ const projects = [
 		tags: ["ReactJS", "Node.js", "RESTful API", "Responsive Design"],
 		githubUrl: "https://github.com/dodoshrey/robots",
 		demoUrl: "https://dodoshrey.github.io/robots",
-		imageUrl: "/project_pic/robots.jpg"
+		imageUrl: "/project_pic/robots.jpg",
+		screenshots: ["/project_pic/robots.jpg"]
 	},
 	{
 		title: "Budget Calculator",
@@ -36,7 +37,8 @@ const projects = [
 		tags: ["HTML", "CSS", "JavaScript"],
 		githubUrl: "https://github.com/dodoshrey/budget-calculator-app",
 		demoUrl: "https://dodoshrey.github.io/budget-calculator-app/",
-		imageUrl: "/project_pic/budget_calculator.jpg"
+		imageUrl: "/project_pic/budget_calculator.jpg",
+		screenshots: ["/project_pic/budget_calculator.jpg"]
 	},
 	{
 		title: "Pig Game",
@@ -44,7 +46,8 @@ const projects = [
 		tags: ["HTML", "CSS", "JS", "Responsive Design"],
 		githubUrl: "https://github.com/dodoshrey/pig-game",
 		demoUrl: "https://dodoshrey.github.io/pig-game/",
-		imageUrl: "/project_pic/pig_game.jpg"
+		imageUrl: "/project_pic/pig_game.jpg",
+		screenshots: ["/project_pic/pig_game.jpg"]
 	},
 	{
 		title: "DOM Manipulation Example",
@@ -52,7 +55,8 @@ const projects = [
 		tags: ["HTML", "CSS", "JS"],
 		githubUrl: "https://github.com/dodoshrey/DOM-Manupulation-Example",
 		demoUrl: "https://dodoshrey.github.io/DOM-Manupulation-Example",
-		imageUrl: "/project_pic/DOM_Manipulation.jpg"
+		imageUrl: "/project_pic/DOM_Manipulation.jpg",
+		screenshots: ["/project_pic/DOM_Manipulation.jpg"]
 	},
 	{
 		title: "Furniture Shopping Site",
@@ -60,7 +64,8 @@ const projects = [
 		tags: ["HTML", "CSS", "JavaScript"],
 		githubUrl: "https://github.com/dodoshrey/first-site",
 		demoUrl: "https://dodoshrey.github.io/first-site/",
-		imageUrl: "/project_pic/furniture_shop.jpg"
+		imageUrl: "/project_pic/furniture_shop.jpg",
+		screenshots: ["/project_pic/furniture_shop.jpg"]
 	},
 	{
 		title: "Basic Template for Website",
@@ -68,7 +73,8 @@ const projects = [
 		tags: ["HTML", "CSS"],
 		githubUrl: "https://github.com/dodoshrey/basic-template-for-a-website",
 		demoUrl: "https://dodoshrey.github.io/basic-template-for-a-website/",
-		imageUrl: "/project_pic/basic_template.jpg"
+		imageUrl: "/project_pic/basic_template.jpg",
+		screenshots: ["/project_pic/basic_template.jpg"]
 	},
 	{
 		title: "Animation Using Hover",
@@ -76,7 +82,8 @@ const projects = [
 		tags: ["HTML", "CSS"],
 		githubUrl: "https://github.com/dodoshrey/Example-of-using-hover-command-HTML-CSS",
 		demoUrl: "https://dodoshrey.github.io/Example-of-using-hover-command-HTML-CSS/",
-		imageUrl: "/project_pic/hover_animation.jpg"
+		imageUrl: "/project_pic/hover_animation.jpg",
+		screenshots: ["/project_pic/hover_animation.jpg"]
 	}
 ];
 
@@ -113,38 +120,11 @@ const Projects = () => {
 								</div>
 							)}
 
+							<br />
+							
 							<CardHeader className="w-full flex flex-col items-center text-center">
 								<CardTitle className="text-xl items-center text-center">{project.title}</CardTitle>
-								<CardDescription className="flex flex-wrap gap-2 mt-2 justify-center">
-									{project.tags.map((tag, i) => (
-										<span key={i} className="bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded-full">
-											{tag}
-										</span>
-									))}
-								</CardDescription>
 							</CardHeader>
-
-							<CardContent className="flex-grow flex flex-col items-center justify-center text-center">
-								<p className="text-gray-700 dark:text-gray-200">{project.description}</p>
-							</CardContent>
-
-							<CardFooter className="flex gap-3 pt-4 justify-center w-full">
-								<Button className="bg-blue-200 dark:bg-blue-900" variant="outline" size="sm" asChild>
-									<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-										<Github size={16} />
-										GitHub
-									</a>
-								</Button>
-								{project.demoUrl && (
-									<Button className="bg-blue-200 dark:bg-blue-900" variant="outline" size="sm" asChild>
-										<a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-											<ExternalLink size={16} />
-											Live Demo
-										</a>
-									</Button>
-								)}
-							</CardFooter>
-							<br />
 						</Card>
 					))}
 				</div>
@@ -165,14 +145,17 @@ const Projects = () => {
 			</div>
 
 			{/* Modal for Project Details */}
-				<Modal open={!!selectedProject} onClose={() => setSelectedProject(null)}>
-					{selectedProject && (
-						<div>
+			<Modal open={!!selectedProject} onClose={() => setSelectedProject(null)}>
+				{selectedProject && (
+					<div>
 						<h2 className="text-2xl font-bold mb-2 text-center">{selectedProject.title}</h2>
 
 						<div className="flex flex-wrap gap-2 mb-4 justify-center">
 							{selectedProject.tags.map((tag, i) => (
-								<span key={i} className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded-full">
+								<span
+									key={i}
+									className="bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded-full"
+								>
 									{tag}
 								</span>
 							))}
@@ -199,20 +182,20 @@ const Projects = () => {
 									height="315"
 									className="rounded-lg"
 									allow="autoplay; encrypted-media"
-									allowFullScreen>
-								</iframe>
+									allowFullScreen
+								></iframe>
 							</div>
 						)}
 
 						<div className="flex gap-3 mt-4 justify-center">
-							<Button variant="outline" size="sm" asChild>
+							<Button className="bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200" variant="outline" size="sm" asChild>
 								<a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
 									<Github size={16} />
 									GitHub
 								</a>
 							</Button>
 							{selectedProject.demoUrl && (
-								<Button variant="outline" size="sm" asChild>
+								<Button className="bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200" variant="outline" size="sm" asChild>
 									<a href={selectedProject.demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
 										<ExternalLink size={16} />
 										Live Demo

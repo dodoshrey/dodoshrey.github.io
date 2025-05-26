@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Menu, X, Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 import { useTheme } from "next-themes";
 
@@ -56,12 +56,38 @@ function SidebarOpenButton({ className, onClick }) {
 const Sidebar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const { theme, setTheme } = useTheme();
+    const desktopSidebarRef = useRef(null);
+
+    // Only attach outside click for desktop sidebar
+    useEffect(() => {
+        if (!isSidebarOpen) return;
+
+        function handleClickOutside(event) {
+            if (
+                desktopSidebarRef.current &&
+                !desktopSidebarRef.current.contains(event.target)
+            ) {
+                setIsSidebarOpen(false);
+            }
+        }
+
+        // Only add listener if desktop sidebar is visible
+        if (window.innerWidth >= 768) {
+            document.addEventListener('mousedown', handleClickOutside);
+            return () => {
+                document.removeEventListener('mousedown', handleClickOutside);
+            };
+        }
+    }, [isSidebarOpen]);
 
     return (
         <>
             {/* Desktop Sidebar */}
             {isSidebarOpen && (
-                <aside className="hidden md:flex fixed top-0 left-0 h-full w-64 bg-black/40 backdrop-blur shadow-xl z-50 flex-col justify-between border-r border-blue-200">
+                <aside
+                    ref={desktopSidebarRef}
+                    className="hidden md:flex fixed top-0 left-0 h-full w-64 bg-black/40 backdrop-blur shadow-xl z-50 flex-col justify-between border-r border-blue-200"
+                >
                     <div>
                         {/* Close Button */}
                         <button
@@ -129,7 +155,9 @@ const Sidebar = () => {
                         onClick={() => setIsSidebarOpen(false)}
                     />
                     {/* Drawer */}
-                    <aside className="relative w-4/5 max-w-xs bg-black/40 backdrop-blur shadow-xl flex flex-col justify-between border-r border-blue-200 animate-slide-in-left">
+                    <aside
+                        className="relative w-4/5 max-w-xs bg-black/40 backdrop-blur shadow-xl flex flex-col justify-between border-r border-blue-200 animate-slide-in-left"
+                    >
                         <div>
                             {/* Close Button */}
                             <button
@@ -189,10 +217,10 @@ const Sidebar = () => {
 						</div>
 					</aside>
 				</div>
-			)}
+            )}
 
-			{/* Sidebar Open Buttons */}
-			{!isSidebarOpen && (
+            {/* Sidebar Open Buttons */}
+            {!isSidebarOpen && (
 				<>
 					{/* Desktop */}
 					<SidebarOpenButton
