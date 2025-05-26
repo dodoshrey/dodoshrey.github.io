@@ -31,7 +31,7 @@ const Hero = () => {
               aria-label="Download Resume"
             >
               <a href="https://drive.google.com/uc?export=download&id=1S0nqdpUimw_mBBQNxVdTZzinGrdFv7Xg">
-                <u>Download Resume</u>
+                Download Resume
               </a>
             </button>
             
