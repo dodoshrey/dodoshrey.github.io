@@ -126,6 +126,31 @@ const Sidebar = () => {
         }
     }, [isSidebarOpen]);
 
+    // Close sidebar on outside click and focus clicked element
+    useEffect(() => {
+        if (!isSidebarOpen) return;
+
+        function handleClickOutside(e) {
+            const sidebarRef = window.innerWidth >= 768 ? desktopSidebarRef : mobileSidebarRef;
+            const sidebar = sidebarRef.current;
+            if (!sidebar) return;
+            if (!sidebar.contains(e.target)) {
+                setIsSidebarOpen(false);
+                // Try to focus the clicked element if it's focusable
+                if (e.target && typeof e.target.focus === "function" && e.target.tabIndex >= 0) {
+                    setTimeout(() => e.target.focus(), 0);
+                } else if (openButtonRef.current) {
+                    setTimeout(() => openButtonRef.current.focus(), 0);
+                }
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isSidebarOpen]);
+
     return (
         <>
             {/* Desktop Sidebar */}
@@ -224,7 +249,7 @@ const Sidebar = () => {
                     {/* Overlay */}
                     <div
                         className="fixed inset-0 bg-black/70 backdrop-blur-sm"
-                        onClick={() => setIsSidebarOpen(false)}
+                        // onClick removed, handled globally
                         tabIndex={-1}
                         aria-hidden="true"
                     />
