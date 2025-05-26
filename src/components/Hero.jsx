@@ -4,18 +4,24 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 text-center">
         <div className="animate-fade-in">
           
-          <h1 className="text-6xl md:text-8xl font-bold text-gray-900 dark:text-white mb-10 tracking-tight">
+          <h1 className="text-6xl md:text-8xl font-serif text-gray-900 dark:text-white mb-10 tracking-tight">
             Shrey
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
               {" "}Wahi
             </span>
           </h1>
           
-          <p className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-2xl font-mono md:text-3xl text-gray-800 dark:text-purple-300 leading-relaxed">
+            <br></br>
             Software Engineer at Microsoft with expertise in front-end development and UX design.
             <br></br>
             <br></br>
+            <br></br>
             Passionate about creating exceptional web experiences and solving complex problems with clean and efficient code. Specializing in React and TypeScript for designing and developing secure web applications.
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">

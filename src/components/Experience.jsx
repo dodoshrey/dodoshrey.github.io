@@ -79,15 +79,15 @@ const Experience = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-serif md:text-5xl font-bold text-orange-400 dark:text-purple-500 mb-6">
             Professional Experience
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl font-mono text-purple-500 dark:text-orange-400 max-w-3xl mx-auto">
             Building innovative solutions and driving impact through technology.
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="font-mono space-y-8">
           {experiences.map((exp, index) => (
             <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
 

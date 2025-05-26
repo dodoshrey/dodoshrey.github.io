@@ -68,12 +68,12 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-4xl font-serif md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Skills & Expertise
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="font-mono grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <div key={index} className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
 
@@ -105,7 +105,7 @@ const Skills = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="font-mono mt-16 text-center">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Proficiency Highlights</h3>
           <div className="grid md:grid-cols-3 gap-8">
 
@@ -127,7 +127,7 @@ const Skills = () => {
           </div>
         </div>
 
-        <div className="text-center mt-24">
+        <div className="font-mono text-center mt-24">
           <button
             onClick={scrollToTop}
             className="animate-bounce text-gray-400 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"

@@ -125,7 +125,7 @@ const Sidebar = () => {
                         <div className="flex justify-center my-4">
                             <a
                                 href="https://drive.google.com/uc?export=download&id=1S0nqdpUimw_mBBQNxVdTZzinGrdFv7Xg"
-                                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+                                className="flex items-center gap-2 px-4 py-2 w-44 justify-center rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
                                 aria-label="Download Resume"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -133,12 +133,11 @@ const Sidebar = () => {
                                 Download Resume
                             </a>
                         </div>
-                        {/* Theme Toggle Button */}
                         <div className="flex justify-center my-4">
                             {mounted && (
                                 <button
                                     onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-                                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+                                    className="flex items-center gap-2 px-4 py-2 w-44 justify-center rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
                                     aria-label="Toggle theme"
                                 >
                                     {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
@@ -211,7 +210,7 @@ const Sidebar = () => {
                             <div className="flex justify-center my-4">
                                 <a
                                     href="https://drive.google.com/uc?export=download&id=1S0nqdpUimw_mBBQNxVdTZzinGrdFv7Xg"
-                                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+                                    className="flex items-center gap-2 px-4 py-2 w-44 justify-center rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
                                     aria-label="Download Resume"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -224,7 +223,7 @@ const Sidebar = () => {
 								{mounted && (
 									<button
 										onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-										className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+										className="flex items-center gap-2 px-4 py-2 w-44 justify-center rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
 										aria-label="Toggle theme"
 									>
 										{resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}

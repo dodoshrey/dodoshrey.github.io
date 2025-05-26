@@ -94,10 +94,10 @@ const Projects = () => {
 		<section id="projects" className="min-h-[100vh] py-20 bg-gradient-to-br from-blue-950 via-blue-300 to-blue-950 dark:from-gray-950 dark:via-gray-500 dark:to-gray-950 flex items-center justify-center">
 			<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-16">
-					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+					<h2 className="text-4xl font-serif md:text-5xl font-bold text-green-950 dark:text-white mb-6">
 						Personal Projects
 					</h2>
-					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+					<p className="text-xl font-mono text-orange-200 dark:text-purple-300 max-w-3xl mx-auto">
 						Here are some of my noteworthy projects that showcase my technical skills and problem-solving abilities.
 					</p>
 				</div>
@@ -106,7 +106,7 @@ const Projects = () => {
 					{projects.map((project, index) => (
 						<Card
 							key={index}
-							className="overflow-hidden h-full flex flex-col border-2 border-blue-500 dark:border-blue-400 transition-all duration-300 hover:shadow-2xl bg-white dark:bg-gray-800 cursor-pointer items-center text-center"
+							className="overflow-hidden h-full flex flex-col border-2 border-red-500 dark:border-blue-900 transition-all duration-300 hover:shadow-2xl bg-orange-200 dark:bg-gray-800 cursor-pointer items-center text-center"
 							style={{ borderRadius: "1rem" }}
 							onClick={() => setSelectedProject(project)}
 						>
@@ -123,13 +123,13 @@ const Projects = () => {
 							<br />
 							
 							<CardHeader className="w-full flex flex-col items-center text-center">
-								<CardTitle className="text-xl items-center text-center">{project.title}</CardTitle>
+								<CardTitle className="text-xl font-mono items-center text-center">{project.title}</CardTitle>
 							</CardHeader>
 						</Card>
 					))}
 				</div>
 
-				<div className="text-center mt-12">
+				<div className="text-center font-mono mt-12">
 					<Button variant="outline" size="lg" asChild>
 						<a
 						href="https://github.com/dodoshrey"
@@ -148,9 +148,9 @@ const Projects = () => {
 			<Modal open={!!selectedProject} onClose={() => setSelectedProject(null)}>
 				{selectedProject && (
 					<div>
-						<h2 className="text-2xl font-bold mb-2 text-center">{selectedProject.title}</h2>
+						<h2 className="text-2xl font-mono font-bold mb-2 text-center">{selectedProject.title}</h2>
 
-						<div className="flex flex-wrap gap-2 mb-4 justify-center">
+						<div className="font-mono flex flex-wrap gap-2 mb-4 justify-center">
 							{selectedProject.tags.map((tag, i) => (
 								<span
 									key={i}
@@ -161,7 +161,7 @@ const Projects = () => {
 							))}
 						</div>
 
-						<p className="mb-4 text-gray-700 dark:text-gray-200 text-center">{selectedProject.description}</p>
+						<p className="font-mono mb-4 text-gray-700 dark:text-gray-200 text-center">{selectedProject.description}</p>
 
 						{/* Screenshots */}
 						{selectedProject.screenshots && (
@@ -187,7 +187,7 @@ const Projects = () => {
 							</div>
 						)}
 
-						<div className="flex gap-3 mt-4 justify-center">
+						<div className="flex font-mono gap-3 mt-4 justify-center">
 							<Button className="bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200" variant="outline" size="sm" asChild>
 								<a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
 									<Github size={16} />
