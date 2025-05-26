@@ -91,7 +91,7 @@ const Projects = () => {
 	const [selectedProject, setSelectedProject] = useState(null);
 
 	return (
-		<section id="projects" className="min-h-[100vh] py-20 bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
+		<section id="projects" className="min-h-[100vh] py-20 bg-gradient-to-br from-blue-950 via-blue-300 to-blue-950 dark:from-gray-950 dark:via-gray-500 dark:to-gray-950 flex items-center justify-center">
 			<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-16">
 					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">

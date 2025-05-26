@@ -64,7 +64,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="min-h-[100vh] py-20 bg-white dark:bg-gray-900 flex items-center justify-center">
+    <section id="skills" className="min-h-[100vh] py-20 bg-gradient-to-br from-blue-950 via-blue-300 to-blue-950 dark:from-gray-950 dark:via-gray-500 dark:to-gray-950 flex items-center justify-center">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">

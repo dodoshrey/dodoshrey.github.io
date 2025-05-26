@@ -2,7 +2,7 @@ import { Code, Users, Zap } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="min-h-[100vh] py-20 bg-gray-900 dark:bg-gray-950 flex items-center justify-center">
+    <section id="about" className="min-h-[100vh] py-20 bg-blue-950 dark:bg-gray-950 flex items-center justify-center">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">

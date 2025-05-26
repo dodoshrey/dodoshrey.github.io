@@ -55,8 +55,13 @@ function SidebarOpenButton({ className, onClick }) {
 
 const Sidebar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme, resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
     const desktopSidebarRef = useRef(null);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     // Only attach outside click for desktop sidebar
     useEffect(() => {
@@ -118,26 +123,28 @@ const Sidebar = () => {
                         </nav><br /><br /><br />
                         {/* Resume Link */}
                         <div className="flex justify-center my-4">
-                            <button
-                                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                            <a
+                                href="https://drive.google.com/uc?export=download&id=1S0nqdpUimw_mBBQNxVdTZzinGrdFv7Xg"
                                 className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
-                                aria-label="Toggle theme"
+                                aria-label="Download Resume"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
-                                <a href="https://drive.google.com/uc?export=download&id=1S0nqdpUimw_mBBQNxVdTZzinGrdFv7Xg">
-                                    Download Resume
-                                </a>
-                            </button>
+                                Download Resume
+                            </a>
                         </div>
                         {/* Theme Toggle Button */}
                         <div className="flex justify-center my-4">
-                            <button
-                                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
-                                aria-label="Toggle theme"
-                            >
-                                {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-                                <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
-                            </button>
+                            {mounted && (
+                                <button
+                                    onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+                                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+                                    aria-label="Toggle theme"
+                                >
+                                    {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+                                    <span>{resolvedTheme === "dark" ? "Light Mode" : "Dark Mode"}</span>
+                                </button>
+                            )}
                         </div>
                     </div>
                     {/* Social Links */}
@@ -202,26 +209,28 @@ const Sidebar = () => {
 							</nav><br /><br /><br />
                             {/* Resume Link */}
                             <div className="flex justify-center my-4">
-                                <button
-                                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                                <a
+                                    href="https://drive.google.com/uc?export=download&id=1S0nqdpUimw_mBBQNxVdTZzinGrdFv7Xg"
                                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
-                                    aria-label="Toggle theme"
+                                    aria-label="Download Resume"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
-                                    <a href="https://drive.google.com/uc?export=download&id=1S0nqdpUimw_mBBQNxVdTZzinGrdFv7Xg">
-                                        Download Resume
-                                    </a>
-                                </button>
+                                    Download Resume
+                                </a>
                             </div>
 							{/* Theme Toggle Button */}
 							<div className="flex justify-center my-4">
-								<button
-									onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-									className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
-									aria-label="Toggle theme"
-								>
-									{theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-									<span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
-								</button>
+								{mounted && (
+									<button
+										onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+										className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+										aria-label="Toggle theme"
+									>
+										{resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+										<span>{resolvedTheme === "dark" ? "Light Mode" : "Dark Mode"}</span>
+									</button>
+								)}
 							</div>
 						</div>
 						{/* Social Links */}

@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section id="hero" className="min-h-[100vh] flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
+    <section id="hero" className="min-h-[100vh] flex items-center justify-center bg-gradient-to-br from-blue-950 via-blue-300 to-blue-950 dark:from-gray-950 dark:via-gray-500 dark:to-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 text-center">
         <div className="animate-fade-in">
           
