@@ -3,7 +3,7 @@ const Hero = () => {
     <section id="hero" className="min-h-[100vh] flex items-center justify-center bg-gradient-to-br from-blue-950 via-blue-300 to-blue-950 dark:from-gray-950 dark:via-gray-500 dark:to-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 text-center">
         <div className="animate-fade-in">
-          
+          <br /><br />
           <h1 className="text-6xl md:text-8xl font-serif text-gray-900 dark:text-white mb-10 tracking-tight">
             Shrey
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-purple-700 dark:from-blue-400 dark:to-purple-400">
