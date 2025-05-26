@@ -28,15 +28,15 @@ const About = () => {
           <div className="space-y-6">
 
             <p className="text-lg font-mono text-purple-500 dark:text-orange-400 leading-relaxed">
-              A Software Engineer at Microsoft with a focus on UX Engineering, I blend creative design with 
+              I'm a Software Engineer with a focus on UX Engineering, I blend creative design with 
               technical development to create secure and intuitive web applications. As a frontend expert with a strong 
               foundation in backend technologies, I design and implement comprehensive solutions that prioritize 
               user experience and security.
             </p>
             
             <p className="text-lg font-mono text-purple-500 dark:text-orange-400 leading-relaxed">
-              With over 3 years of experience, I've developed expertise in React, TypeScript, and various cloud technologies.
-              My work at Microsoft has involved enhancing security solutions and designing user interfaces that protect 
+              With over 4+ years of experience, I've developed expertise in React, TypeScript, and various cloud technologies.
+              My day to day work involves enhancing security solutions and designing user interfaces that protect 
               millions of users while maintaining a seamless experience. I'm also experienced in optimizing application 
               performance and architecting scalable frontend solutions.
             </p>

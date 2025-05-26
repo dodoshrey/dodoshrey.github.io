@@ -5,19 +5,20 @@ const Hero = () => {
         <div className="animate-fade-in">
           <br /><br />
           <h1 className="text-6xl md:text-8xl font-serif text-gray-900 dark:text-white mb-10 tracking-tight">
-            Shrey
+            Hello,
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-purple-700 dark:from-blue-400 dark:to-purple-400">
-              {" "}Wahi
+              {" "}Shrey{" "}
             </span>
+            this side. Welcome to my portfolio!
           </h1>
           
           <p className="text-2xl font-mono md:text-3xl text-gray-900 dark:text-purple-200 leading-relaxed">
             <br></br>
-            Software Engineer at Microsoft with expertise in front-end development and UX design.
+            A Software Engineer with expertise in front-end development.
             <br></br>
             <br></br>
             <br></br>
-            Passionate about creating exceptional web experiences and solving complex problems with clean and efficient code. Specializing in React and TypeScript for designing and developing secure web applications.
+            I'm passionate about creating exceptional web experiences and solving complex problems with clean and efficient code. Specializing in React and TypeScript for designing and developing secure web applications.
             <br></br>
             <br></br>
             <br></br>
