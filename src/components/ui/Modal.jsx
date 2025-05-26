@@ -23,7 +23,8 @@ const Modal = ({ open, onClose, children }) => {
     <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-sm">
       <div
         ref={modalRef}
-        className="bg-white dark:bg-gray-900 rounded-xl shadow-2xl max-w-2xl w-full p-6 relative"
+        className="bg-white dark:bg-gray-900 rounded-xl shadow-4xl max-w-4xl w-full p-16 relative"
+        style={{ maxHeight: "80vh" }} // Set max height for modal
       >
         <button
           onClick={onClose}
@@ -32,7 +33,9 @@ const Modal = ({ open, onClose, children }) => {
         >
           ×
         </button>
-        {children}
+        <div className="overflow-y-auto" style={{ maxHeight: "65vh" }}>
+          {children}
+        </div>
       </div>
     </div>
   );
