@@ -6,11 +6,11 @@ const About = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-serif md:text-5xl font-bold text-purple-500 dark:text-orange-400 mb-6">
+          <h2 className="text-4xl font-serif md:text-5xl font-bold text-orange-400 dark:text-purple-500 mb-6">
             About Me
           </h2>
 
-          <p className="text-xl font-serif text-orange-400 dark:text-purple-500 leading-relaxed">
+          <p className="text-xl font-serif text-purple-500 dark:text-orange-400 leading-relaxed">
             Passionate about creating exceptional web experiences and solving complex problems with clean, efficient code.
           </p>
         </div>
@@ -27,14 +27,14 @@ const About = () => {
           
           <div className="space-y-6">
 
-            <p className="text-lg font-mono text-orange-400 dark:text-purple-500 leading-relaxed">
+            <p className="text-lg font-mono text-purple-500 dark:text-orange-400 leading-relaxed">
               A Software Engineer at Microsoft with a focus on UX Engineering, I blend creative design with 
               technical development to create secure and intuitive web applications. As a frontend expert with a strong 
               foundation in backend technologies, I design and implement comprehensive solutions that prioritize 
               user experience and security.
             </p>
             
-            <p className="text-lg font-mono text-orange-400 dark:text-purple-500 leading-relaxed">
+            <p className="text-lg font-mono text-purple-500 dark:text-orange-400 leading-relaxed">
               With over 3 years of experience, I've developed expertise in React, TypeScript, and various cloud technologies.
               My work at Microsoft has involved enhancing security solutions and designing user interfaces that protect 
               millions of users while maintaining a seamless experience. I'm also experienced in optimizing application 
