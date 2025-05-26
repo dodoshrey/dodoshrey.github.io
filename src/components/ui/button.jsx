@@ -13,11 +13,11 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-900 dark:text-white",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-900 dark:text-white",
+        ghost: "hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-900 dark:text-white",
+        link: "text-primary underline-offset-4 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-600",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -34,12 +34,24 @@ const buttonVariants = cva(
 )
 
 const Button = React.forwardRef(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size,
+      asChild = false,
+      "aria-label": ariaLabel,
+      ...props
+    },
+    ref
+  ) => {
     const Comp = asChild ? Slot : "button"
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
+        aria-label={ariaLabel}
+        tabIndex={0}
         {...props}
       />
     )

@@ -44,9 +44,10 @@ const scrollToSection = (sectionId, closeMenu) => {
 function SidebarOpenButton({ className, onClick }) {
 	return (
 		<button
-			className={`fixed bottom-6 left-6 z-50 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors ${className}`}
+			className={`fixed bottom-6 left-6 z-50 bg-blue-700 text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 ${className}`}
 			onClick={onClick}
 			aria-label="Open sidebar"
+			tabIndex={0}
 		>
 			<Menu size={28} />
 		</button>
@@ -62,6 +63,21 @@ const Sidebar = () => {
     useEffect(() => {
         setMounted(true);
     }, []);
+
+    // Keyboard navigation: close on Escape
+    useEffect(() => {
+        if (!isSidebarOpen) return;
+
+        function handleKeyDown(event) {
+            if (event.key === "Escape") {
+                setIsSidebarOpen(false);
+            }
+        }
+        document.addEventListener("keydown", handleKeyDown);
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [isSidebarOpen]);
 
     // Only attach outside click for desktop sidebar
     useEffect(() => {
@@ -91,31 +107,41 @@ const Sidebar = () => {
             {isSidebarOpen && (
                 <aside
                     ref={desktopSidebarRef}
-                    className="hidden md:flex fixed top-0 left-0 h-full w-64 bg-black/40 backdrop-blur shadow-xl z-50 flex-col justify-between border-r border-blue-200"
+                    className="hidden md:flex fixed top-0 left-0 h-full w-64 bg-black/80 backdrop-blur shadow-xl z-50 flex-col justify-between border-r border-blue-300"
+                    role="navigation"
+                    aria-label="Sidebar Navigation"
+                    tabIndex={-1}
                 >
                     <div>
                         {/* Close Button */}
                         <button
-                            className="absolute top-4 right-4 text-white hover:text-blue-600 transition-colors"
+                            className="absolute top-4 right-4 text-white hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
                             onClick={() => setIsSidebarOpen(false)}
                             aria-label="Close sidebar"
+                            tabIndex={0}
                         >
                             <X size={28} />
                         </button>
                         <br /><br />
                         <div
-                            className="flex items-center justify-center h-24 text-3xl font-bold text-white tracking-wide hover:text-blue-600 transition-colors"
+                            className="flex items-center justify-center h-24 text-3xl font-bold text-white tracking-wide hover:text-blue-700 transition-colors cursor-pointer"
                             onClick={() => scrollToSection('hero')}
+                            tabIndex={0}
+                            aria-label="Go to Home"
+                            role="button"
+                            onKeyDown={e => { if (e.key === "Enter" || e.key === " ") scrollToSection('hero'); }}
                         >
                             Portfolio
                         </div>
                         {/* Navigation */}
-                        <nav className="flex flex-col gap-2 mt-10 px-6">
+                        <nav className="flex flex-col gap-2 mt-10 px-6" aria-label="Main navigation">
                             {navLinks.map((link) => (
                                 <button
                                     key={link.section}
                                     onClick={() => scrollToSection(link.section)}
-                                    className="text-lg text-white hover:text-blue-600 py-3 px-4 rounded-lg transition-colors text-left font-medium hover:bg-blue-50"
+                                    className="text-lg text-white hover:text-blue-700 py-3 px-4 rounded-lg transition-colors text-left font-medium hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                    aria-label={`Go to ${link.label}`}
+                                    tabIndex={0}
                                 >
                                     {link.label}
                                 </button>
@@ -125,10 +151,11 @@ const Sidebar = () => {
                         <div className="flex justify-center my-4">
                             <a
                                 href="https://drive.google.com/uc?export=download&id=1S0nqdpUimw_mBBQNxVdTZzinGrdFv7Xg"
-                                className="flex items-center gap-2 px-4 py-2 w-44 justify-center rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+                                className="flex items-center gap-2 px-4 py-2 w-44 justify-center rounded-lg bg-gray-900 text-white hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 aria-label="Download Resume"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                tabIndex={0}
                             >
                                 Download Resume
                             </a>
@@ -137,8 +164,9 @@ const Sidebar = () => {
                             {mounted && (
                                 <button
                                     onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-                                    className="flex items-center gap-2 px-4 py-2 w-44 justify-center rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+                                    className="flex items-center gap-2 px-4 py-2 w-44 justify-center rounded-lg bg-gray-900 text-white hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
                                     aria-label="Toggle theme"
+                                    tabIndex={0}
                                 >
                                     {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
                                     <span>{resolvedTheme === "dark" ? "Light Mode" : "Dark Mode"}</span>
@@ -154,8 +182,9 @@ const Sidebar = () => {
                                 href={href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-white hover:text-blue-600 transition-colors"
+                                className="text-white hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 aria-label={label}
+                                tabIndex={0}
                             >
                                 <Icon size={24} />
                             </a>
@@ -166,41 +195,53 @@ const Sidebar = () => {
 
             {/* Mobile Drawer Sidebar */}
             {isSidebarOpen && (
-                <div className="md:hidden fixed inset-0 z-50 flex">
+                <div className="md:hidden fixed inset-0 z-50 flex" role="dialog" aria-modal="true" aria-label="Mobile Sidebar Navigation">
                     {/* Overlay */}
                     <div
-                        className="fixed inset-0 bg-black/40 backdrop-blur-sm"
+                        className="fixed inset-0 bg-black/70 backdrop-blur-sm"
                         onClick={() => setIsSidebarOpen(false)}
+                        tabIndex={-1}
+                        aria-hidden="true"
                     />
                     {/* Drawer */}
                     <aside
-                        className="relative w-4/5 max-w-xs bg-black/40 backdrop-blur shadow-xl flex flex-col justify-between border-r border-blue-200 animate-slide-in-left"
+                        className="relative w-4/5 max-w-xs bg-black/90 backdrop-blur shadow-xl flex flex-col justify-between border-r border-blue-300 animate-slide-in-left"
+                        tabIndex={-1}
+                        role="navigation"
+                        aria-label="Sidebar Navigation"
                     >
                         <div>
                             {/* Close Button */}
                             <button
-                                className="absolute top-4 right-4 text-white"
+                                className="absolute top-4 right-4 text-white hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 onClick={() => setIsSidebarOpen(false)}
                                 aria-label="Close sidebar"
+                                tabIndex={0}
                             >
                                 <X size={28} />
                             </button>
                             <br /><br />
 							<div
-								className="flex items-center justify-center h-24 text-3xl font-bold text-white"
+								className="flex items-center justify-center h-24 text-3xl font-bold text-white cursor-pointer"
 								onClick={() => {
 									scrollToSection('hero', setIsSidebarOpen);
 								}}
+								tabIndex={0}
+								aria-label="Go to Home"
+								role="button"
+								onKeyDown={e => { if (e.key === "Enter" || e.key === " ") scrollToSection('hero', setIsSidebarOpen); }}
 							>
 								Portfolio
 							</div>
 							{/* Navigation */}
-							<nav className="flex flex-col gap-2 mt-10 px-6">
+							<nav className="flex flex-col gap-2 mt-10 px-6" aria-label="Main navigation">
 								{navLinks.map((link) => (
 									<button
 										key={link.section}
 										onClick={() => scrollToSection(link.section, setIsSidebarOpen)}
-										className="text-lg text-white py-3 px-4 rounded-lg transition-colors text-left font-medium"
+										className="text-lg text-white py-3 px-4 rounded-lg transition-colors text-left font-medium hover:bg-blue-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+										aria-label={`Go to ${link.label}`}
+										tabIndex={0}
 									>
 										{link.label}
 									</button>
@@ -210,10 +251,11 @@ const Sidebar = () => {
                             <div className="flex justify-center my-4">
                                 <a
                                     href="https://drive.google.com/uc?export=download&id=1S0nqdpUimw_mBBQNxVdTZzinGrdFv7Xg"
-                                    className="flex items-center gap-2 px-4 py-2 w-44 justify-center rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+                                    className="flex items-center gap-2 px-4 py-2 w-44 justify-center rounded-lg bg-gray-900 text-white hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
                                     aria-label="Download Resume"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    tabIndex={0}
                                 >
                                     Download Resume
                                 </a>
@@ -223,8 +265,9 @@ const Sidebar = () => {
 								{mounted && (
 									<button
 										onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-										className="flex items-center gap-2 px-4 py-2 w-44 justify-center rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+										className="flex items-center gap-2 px-4 py-2 w-44 justify-center rounded-lg bg-gray-900 text-white hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
 										aria-label="Toggle theme"
+										tabIndex={0}
 									>
 										{resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
 										<span>{resolvedTheme === "dark" ? "Light Mode" : "Dark Mode"}</span>
@@ -240,8 +283,9 @@ const Sidebar = () => {
 									href={href}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="text-white"
+									className="text-white hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
 									aria-label={label}
+									tabIndex={0}
 								>
 									<Icon size={24} />
 								</a>

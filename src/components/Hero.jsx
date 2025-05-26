@@ -6,12 +6,12 @@ const Hero = () => {
           
           <h1 className="text-6xl md:text-8xl font-serif text-gray-900 dark:text-white mb-10 tracking-tight">
             Shrey
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-purple-700 dark:from-blue-400 dark:to-purple-400">
               {" "}Wahi
             </span>
           </h1>
           
-          <p className="text-2xl font-mono md:text-3xl text-gray-800 dark:text-purple-300 leading-relaxed">
+          <p className="text-2xl font-mono md:text-3xl text-gray-900 dark:text-purple-200 leading-relaxed">
             <br></br>
             Software Engineer at Microsoft with expertise in front-end development and UX design.
             <br></br>
@@ -27,7 +27,8 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
             
             <button 
-              className="bg-blue-600 text-white px-10 py-5 rounded-xl text-xl font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+              className="bg-blue-700 text-white px-10 py-5 rounded-xl text-xl font-semibold hover:bg-blue-800 transition-all duration-300 transform hover:scale-105 shadow-2xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+              aria-label="Download Resume"
             >
               <a href="https://drive.google.com/uc?export=download&id=1S0nqdpUimw_mBBQNxVdTZzinGrdFv7Xg">
                 <u>Download Resume</u>
@@ -36,7 +37,8 @@ const Hero = () => {
             
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-2 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-200 px-10 py-5 rounded-xl text-xl font-semibold hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
+              className="border-2 border-gray-700 dark:border-gray-200 text-gray-900 dark:text-gray-200 px-10 py-5 rounded-xl text-xl font-semibold hover:border-blue-700 hover:text-blue-700 dark:hover:text-blue-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              aria-label="Scroll to Contact section"
             >
               Get In Touch
             </button>

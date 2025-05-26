@@ -109,6 +109,10 @@ const Projects = () => {
 							className="overflow-hidden h-full flex flex-col border-2 border-red-500 dark:border-blue-900 transition-all duration-300 hover:shadow-2xl bg-orange-200 dark:bg-gray-800 cursor-pointer items-center text-center"
 							style={{ borderRadius: "1rem" }}
 							onClick={() => setSelectedProject(project)}
+							role="button"
+							tabIndex={0}
+							aria-label={`View details for ${project.title}`}
+							onKeyDown={e => { if (e.key === "Enter" || e.key === " ") setSelectedProject(project); }}
 						>
 							{project.imageUrl && (
 								<div className="h-48 overflow-hidden flex justify-center items-center w-full">
@@ -116,6 +120,7 @@ const Projects = () => {
 									src={project.imageUrl}
 									alt={project.title}
 									className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+									aria-label={`${project.title} screenshot`}
 									/>
 								</div>
 							)}
@@ -130,7 +135,7 @@ const Projects = () => {
 				</div>
 
 				<div className="text-center font-mono mt-12">
-					<Button variant="outline" size="lg" asChild>
+					<Button variant="outline" size="lg" asChild aria-label="View more projects on GitHub">
 						<a
 						href="https://github.com/dodoshrey"
 						target="_blank"
@@ -145,7 +150,7 @@ const Projects = () => {
 			</div>
 
 			{/* Modal for Project Details */}
-			<Modal open={!!selectedProject} onClose={() => setSelectedProject(null)}>
+			<Modal open={!!selectedProject} onClose={() => setSelectedProject(null)} ariaLabel={selectedProject ? selectedProject.title : "Project Details"}>
 				{selectedProject && (
 					<div>
 						<h2 className="text-2xl font-mono font-bold mb-2 text-center">{selectedProject.title}</h2>
@@ -154,20 +159,21 @@ const Projects = () => {
 							{selectedProject.tags.map((tag, i) => (
 								<span
 									key={i}
-									className="bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded-full"
+									className="bg-blue-700 dark:bg-blue-900 text-white dark:text-blue-200 text-xs px-2 py-1 rounded-full"
+									style={{ color: "#fff" }}
 								>
 									{tag}
 								</span>
 							))}
 						</div>
 
-						<p className="font-mono mb-4 text-gray-700 dark:text-gray-200 text-center">{selectedProject.description}</p>
+						<p className="font-mono mb-4 text-gray-800 dark:text-gray-200 text-center">{selectedProject.description}</p>
 
 						{/* Screenshots */}
 						{selectedProject.screenshots && (
 							<div className="mb-4 flex gap-4 overflow-x-auto justify-center">
 								{selectedProject.screenshots.map((src, i) => (
-									<img key={i} src={src} alt={`Screenshot ${i + 1}`} className="h-120 rounded-lg border" />
+									<img key={i} src={src} alt={`Screenshot ${i + 1}`} className="h-120 rounded-lg border" aria-label={`Screenshot ${i + 1} of ${selectedProject.title}`} />
 								))}
 							</div>
 						)}
@@ -188,14 +194,14 @@ const Projects = () => {
 						)}
 
 						<div className="flex font-mono gap-3 mt-4 justify-center">
-							<Button className="bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200" variant="outline" size="sm" asChild>
+							<Button className="bg-blue-700 dark:bg-blue-900 text-white dark:text-blue-200" variant="outline" size="sm" asChild aria-label="View on GitHub">
 								<a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
 									<Github size={16} />
 									GitHub
 								</a>
 							</Button>
 							{selectedProject.demoUrl && (
-								<Button className="bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200" variant="outline" size="sm" asChild>
+								<Button className="bg-blue-700 dark:bg-blue-900 text-white dark:text-blue-200" variant="outline" size="sm" asChild aria-label="View live demo">
 									<a href={selectedProject.demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
 										<ExternalLink size={16} />
 										Live Demo
