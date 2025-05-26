@@ -104,7 +104,6 @@ const Sidebar = () => {
                         >
                             Portfolio
                         </div>
-                        {/* Theme Toggle Button */}
                         {/* Navigation */}
                         <nav className="flex flex-col gap-2 mt-10 px-6">
                             {navLinks.map((link) => (
@@ -117,6 +116,19 @@ const Sidebar = () => {
                                 </button>
                             ))}
                         </nav><br /><br /><br />
+                        {/* Resume Link */}
+                        <div className="flex justify-center my-4">
+                            <button
+                                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+                                aria-label="Toggle theme"
+                            >
+                                <a href="https://drive.google.com/uc?export=download&id=1S0nqdpUimw_mBBQNxVdTZzinGrdFv7Xg">
+                                    Download Resume
+                                </a>
+                            </button>
+                        </div><br />
+                        {/* Theme Toggle Button */}
                         <div className="flex justify-center my-4">
                             <button
                                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -167,7 +179,7 @@ const Sidebar = () => {
                             >
                                 <X size={28} />
                             </button>
-              <br /><br />
+                            <br /><br />
 							<div
 								className="flex items-center justify-center h-24 text-3xl font-bold text-white"
 								onClick={() => {
@@ -188,6 +200,18 @@ const Sidebar = () => {
 									</button>
 								))}
 							</nav><br /><br /><br />
+                            {/* Resume Link */}
+                            <div className="flex justify-center my-4">
+                                <button
+                                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white hover:bg-blue-600 transition-colors"
+                                    aria-label="Toggle theme"
+                                >
+                                    <a href="https://drive.google.com/uc?export=download&id=1S0nqdpUimw_mBBQNxVdTZzinGrdFv7Xg">
+                                        Download Resume
+                                    </a>
+                                </button>
+                            </div>
 							{/* Theme Toggle Button */}
 							<div className="flex justify-center my-4">
 								<button
