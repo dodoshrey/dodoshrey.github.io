@@ -64,17 +64,13 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-white">
-      <div className="min-h-[100vh] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="min-h-[100vh] py-20 bg-white flex items-center justify-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Skills & Expertise
           </h2>
-
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A comprehensive toolkit for building modern, scalable, and secure applications.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

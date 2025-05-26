@@ -71,9 +71,9 @@ const projects = [
 
 const Projects = () => {
 	return (
-		<section id="projects" className="py-20 bg-gray-50">
+		<section id="projects" className="min-h-[100vh] py-20 bg-gray-50 flex items-center justify-center">
 
-			<div className="min-h-[100vh] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 				
 				<div className="text-center mb-16">
 					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
