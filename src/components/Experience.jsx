@@ -18,7 +18,7 @@ const Experience = () => {
 
         <div className="font-mono space-y-6 sm:space-y-8">
           {experiences.map((exp, index) => (
-            <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-8 hover:shadow-xl transition-shadow duration-300 line-clamp-2">
+            <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-8 hover:shadow-xl transition-shadow duration-300">
 
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 sm:mb-6">
                 <div className="flex items-start space-x-3 sm:space-x-4">
@@ -27,23 +27,20 @@ const Experience = () => {
                     <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-300" />
                   </div>
 
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white">{exp.title}</h3>
-                    <p className="text-base sm:text-xl text-blue-600 dark:text-blue-400 font-semibold">{exp.company}</p>
-                    <div className="flex items-center text-gray-600 dark:text-gray-300 mt-1 sm:mt-2">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      <span className="text-xs sm:text-base">{exp.period} • {exp.location}</span>
+                    <div className="flex items-center w-full">
+                      <p className="text-base sm:text-xl text-blue-600 dark:text-blue-400 font-semibold mb-0 flex-1">{exp.company}</p>
+                      <button
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-semibold transition-colors text-sm sm:text-base ml-2"
+                        onClick={() => setOpenModalIndex(index)}
+                      >
+                        View Details
+                      </button>
                     </div>
                   </div>
 
                 </div>
-                {/* View Details Button */}
-                <button
-                  className="mt-3 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-semibold transition-colors text-sm sm:text-base"
-                  onClick={() => setOpenModalIndex(index)}
-                >
-                  View Details
-                </button>
               </div>
               
               <p className="text-gray-700 dark:text-gray-200 text-sm sm:text-lg mb-0 leading-snug">
@@ -57,19 +54,19 @@ const Experience = () => {
             <Modal open={true} onClose={() => setOpenModalIndex(null)}>
               <div className="p-0 sm:p-0">
                 <h3 className="text-lg sm:text-2xl font-bold mb-2 text-gray-900 dark:text-white">{experiences[openModalIndex].title}</h3>
-                <p className="text-base sm:text-xl text-blue-600 dark:text-blue-400 font-semibold mb-2">{experiences[openModalIndex].company}</p>
+                <p className="text-base sm:text-xl text-blue-600 dark:text-blue-400 font-semibold mb-2 text-justify">{experiences[openModalIndex].company}</p>
                 <div className="flex items-center text-gray-600 dark:text-gray-300 mb-2 sm:mb-4">
                   <Calendar className="w-4 h-4 mr-2" />
                   <span className="text-xs sm:text-base">{experiences[openModalIndex].period} • {experiences[openModalIndex].location}</span>
                 </div>
-                <p className="text-gray-700 dark:text-gray-200 text-base sm:text-lg mb-3 sm:mb-4">{experiences[openModalIndex].description}</p>
+                <p className="text-gray-700 dark:text-gray-200 text-base sm:text-lg mb-3 sm:mb-4 text-justify">{experiences[openModalIndex].description}</p>
                 <div className="mb-3 sm:mb-4">
                   <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Key Achievements:</h4>
                   <ul className="space-y-2">
                     {experiences[openModalIndex].achievements.map((achievement, i) => (
                       <li key={i} className="flex items-start">
                         <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-black dark:text-white mr-2 sm:mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700 dark:text-gray-200 text-sm sm:text-base">{achievement}</span>
+                        <span className="text-gray-700 dark:text-gray-200 text-sm sm:text-base text-justify">{achievement}</span>
                       </li>
                     ))}
                   </ul>

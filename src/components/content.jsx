@@ -79,27 +79,27 @@ export const projects = [
     //   videoUrl: "https://www.youtube.com/embed/your-demo-video"
     // }
   	{
+		title: "Robot Name Search App",
+		description: "A project to show 'filter name functionality'. Ensured responsiveness of the design on smartphones and other devices.",
+		tags: ["ReactJS", "Node.js", "RESTful API", "JavaScript", "CSS3", "HTML5", "Responsive Design"],
+		githubUrl: "https://github.com/dodoshrey/robots",
+		demoUrl: "https://dodoshrey.github.io/robots",
+		imageUrl: "/project_pic/robots.jpg",
+		videoUrl: "/project_video/robots.mp4"
+	},
+    {
 		title: "Tic Tac Toe",
 		description: "Created Tic Tac Toe, a fun 2 player game with ReactJS.",
-		tags: ["ReactJS", "JavaScript", "CSS"],
+		tags: ["ReactJS", "JavaScript", "CSS3", "HTML5", "Responsive Design"],
 		githubUrl: "https://github.com/dodoshrey/tic-tac-toe",
 		demoUrl: "https://dodoshrey.github.io/tic-tac-toe/",
 		imageUrl: "/project_pic/tic_tac_toe.jpg",
 	    videoUrl: "/project_video/tic_tac_toe.mp4"
 	},
 	{
-		title: "Robot Name Search App",
-		description: "A project to show 'filter name functionality'. Ensured responsiveness of the design on smartphones and other devices.",
-		tags: ["ReactJS", "Node.js", "RESTful API", "Responsive Design"],
-		githubUrl: "https://github.com/dodoshrey/robots",
-		demoUrl: "https://dodoshrey.github.io/robots",
-		imageUrl: "/project_pic/robots.jpg",
-		videoUrl: "/project_video/robots.mp4"
-	},
-	{
 		title: "Budget Calculator",
 		description: "A smart budget calculator app that helps you manage your finances effectively.",
-		tags: ["HTML", "CSS", "JavaScript"],
+		tags: ["JavaScript", "CSS3", "HTML5"],
 		githubUrl: "https://github.com/dodoshrey/budget-calculator-app",
 		demoUrl: "https://dodoshrey.github.io/budget-calculator-app/",
 		imageUrl: "/project_pic/budget_calculator.jpg",
@@ -108,7 +108,7 @@ export const projects = [
 	{
 		title: "Pig Game",
 		description: "Created a 2 player dice sum counting game using HTML, CSS, Javascript. The game is played by rolling a dice and accumulating points until one player reaches 100 points.",
-		tags: ["HTML", "CSS", "JS", "Responsive Design"],
+		tags: ["JavaScript", "CSS3", "HTML5", "Responsive Design"],
 		githubUrl: "https://github.com/dodoshrey/pig-game",
 		demoUrl: "https://dodoshrey.github.io/pig-game/",
 		imageUrl: "/project_pic/pig_game.jpg",
@@ -117,7 +117,7 @@ export const projects = [
 	{
 		title: "DOM Manipulation Example",
 		description: "Made a shopping list example in which you can add new items or delete existing items.",
-		tags: ["HTML", "CSS", "JS"],
+		tags: ["JavaScript", "CSS3", "HTML5"],
 		githubUrl: "https://github.com/dodoshrey/DOM-Manupulation-Example",
 		demoUrl: "https://dodoshrey.github.io/DOM-Manupulation-Example",
 		imageUrl: "/project_pic/DOM_Manipulation.jpg",
@@ -126,7 +126,7 @@ export const projects = [
 	{
 		title: "Furniture Shopping Site",
 		description: "Created a furniture shopping site using HTML, CSS, and JavaScript.",
-		tags: ["HTML", "CSS", "JavaScript"],
+		tags: ["JavaScript", "CSS3", "HTML5"],
 		githubUrl: "https://github.com/dodoshrey/first-site",
 		demoUrl: "https://dodoshrey.github.io/first-site/",
 		imageUrl: "/project_pic/furniture_shop.jpg",
@@ -135,7 +135,7 @@ export const projects = [
 	{
 		title: "Basic Template for Website",
 		description: "A template/design for creating a webpage using HTML and CSS. It includes a header, footer, and a main section with a simple layout.",
-		tags: ["HTML", "CSS"],
+		tags: ["HTML5", "CSS3"],
 		githubUrl: "https://github.com/dodoshrey/basic-template-for-a-website",
 		demoUrl: "https://dodoshrey.github.io/basic-template-for-a-website/",
 		imageUrl: "/project_pic/basic_template.jpg",
@@ -144,7 +144,7 @@ export const projects = [
 	{
 		title: "Animation Using Hover",
 		description: "Basic hover command is used to implement animation in this project. It is a simple example of using hover effects to create animations on elements.",
-		tags: ["HTML", "CSS"],
+		tags: ["HTML5", "CSS3"],
 		githubUrl: "https://github.com/dodoshrey/Example-of-using-hover-command-HTML-CSS",
 		demoUrl: "https://dodoshrey.github.io/Example-of-using-hover-command-HTML-CSS/",
 		imageUrl: "/project_pic/hover_animation.jpg",
