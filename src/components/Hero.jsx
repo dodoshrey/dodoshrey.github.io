@@ -4,28 +4,27 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 text-center">
         <div className="animate-fade-in">
           <br /><br />
-          <h1 className="text-6xl md:text-8xl font-serif text-gray-900 dark:text-white mb-10 tracking-tight">
-            Hello,
+          <h1 className="text-3xl sm:text-5xl md:text-8xl font-serif text-gray-900 dark:text-white mb-6 tracking-tight">
+            Shrey
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-purple-700 dark:from-blue-400 dark:to-purple-400">
-              {" "}Shrey{" "}
+              {" "}Wahi{" "}
             </span>
-            this side. Welcome to my portfolio!
           </h1>
           
-          <p className="text-2xl font-mono md:text-3xl text-gray-900 dark:text-purple-200 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-3xl font-mono text-gray-900 dark:text-purple-200 leading-relaxed">
             <br></br>
-            A Software Engineer with expertise in front-end development.
+            Software Engineer with expertise in ReactJS and TypeScript with an interest in front-end development.
             <br></br>
             <br></br>
             <br></br>
-            I'm passionate about creating exceptional web experiences and solving complex problems with clean and efficient code. Specializing in React and TypeScript for designing and developing secure web applications.
+            I'm passionate about creating exceptional web experiences and solving complex problems with clean and efficient code. Specialized in designing and developing secure web applications.
             <br></br>
             <br></br>
             <br></br>
             <br></br>
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-8 sm:mb-16">
             
             <button 
               className="bg-blue-700 text-white px-10 py-5 rounded-xl text-xl font-semibold hover:bg-blue-800 transition-all duration-300 transform hover:scale-105 shadow-2xl focus:outline-none focus:ring-2 focus:ring-blue-400"

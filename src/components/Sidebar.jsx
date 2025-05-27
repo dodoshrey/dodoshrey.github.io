@@ -256,7 +256,7 @@ const Sidebar = () => {
                     {/* Drawer */}
                     <aside
                         ref={mobileSidebarRef}
-                        className="relative w-4/5 max-w-xs bg-black/90 backdrop-blur shadow-xl flex flex-col justify-between border-r border-blue-300 animate-slide-in-left"
+                        className="relative w-3/5 max-w-[200px] bg-black/90 backdrop-blur shadow-xl flex flex-col justify-between border-r border-blue-300 animate-slide-in-left"
                         tabIndex={-1}
                         role="navigation"
                         aria-label="Sidebar Navigation"

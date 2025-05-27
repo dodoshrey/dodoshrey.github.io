@@ -62,7 +62,7 @@ const Modal = ({ open, onClose, children, ariaLabel = "Modal Dialog" }) => {
     >
       <div
         ref={modalRef}
-        className="bg-blue-400 dark:bg-gray-800 rounded-xl shadow-4xl max-w-4xl w-full p-16 relative"
+        className="bg-blue-400 dark:bg-gray-800 rounded-xl shadow-4xl max-w-4xl w-full p-3 sm:p-6 relative"
         style={{ maxHeight: "80vh" }}
         role="dialog"
         aria-modal="true"
@@ -71,12 +71,15 @@ const Modal = ({ open, onClose, children, ariaLabel = "Modal Dialog" }) => {
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-800 dark:text-gray-200 hover:text-blue-700 dark:hover:text-blue-400 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="absolute top-4 right-12 text-gray-800 dark:text-gray-200 hover:text-blue-700 dark:hover:text-blue-400 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-blue-600"
           aria-label="Close modal"
         >
           ×
         </button>
-        <div className="overflow-y-auto" style={{ maxHeight: "65vh" }}>
+        <div
+          className="overflow-y-auto"
+          style={{ maxHeight: "65vh", scrollbarGutter: "stable both-edges", scrollbarWidth: "thin",  }}
+        >
           {children}
         </div>
       </div>
