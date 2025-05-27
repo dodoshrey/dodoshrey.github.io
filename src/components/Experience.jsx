@@ -74,7 +74,7 @@ const Experience = () => {
                   </ul>
                 </div>
                 {experiences[openModalIndex].projects && (
-                  <div className="mb-3 sm:mb-4">
+                  <div className="mb-3 sm:mb-4 text-justify">
                     <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Projects:</h4>
                     <div className="space-y-3 sm:space-y-4">
                       {experiences[openModalIndex].projects.map((project, i) => (
