@@ -43,7 +43,7 @@ export const experiences = [
         ]
       }
     ],
-    technologies: ["React", "TypeScript", "JavaScript", "C#", ".NET", "KnockoutJS", "Azure"]
+    technologies: ["ReactJS", "TypeScript", "JavaScript", "C#", ".NET", "KnockoutJS", "Azure", "C++", "Microservices", "RESTful APIs", "Playwright", "Unit Testing", "CI/CD", "Git", "Webpack", "Copilot", "Visual Studio", "VS Code"]
   },
   {
     title: "Frontend Developer - Intern",
@@ -70,14 +70,6 @@ export const experiences = [
 ];
 
 export const projects = [
-    // ...existing project objects...
-    // Add a `screenshots` or `videoUrl` property to any project if you want
-    // Example:
-    // {
-    //   ...,
-    //   screenshots: ["/project_pic/tic_tac_toe_1.jpg", "/project_pic/tic_tac_toe_2.jpg"],
-    //   videoUrl: "https://www.youtube.com/embed/your-demo-video"
-    // }
   	{
 		title: "Robot Name Search App",
 		description: "A project to show 'filter name functionality'. Ensured responsiveness of the design on smartphones and other devices.",

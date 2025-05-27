@@ -53,10 +53,13 @@ const Experience = () => {
             <Modal open={true} onClose={() => setOpenModalIndex(null)}>
               <div className="p-0 sm:p-0">
                 <h3 className="text-lg sm:text-2xl font-bold mb-2 text-gray-900 dark:text-white">{experiences[openModalIndex].title}</h3>
-                <p className="text-base sm:text-xl text-blue-600 dark:text-blue-400 font-semibold mb-2 text-justify">{experiences[openModalIndex].company}</p>
-                <div className="flex items-center text-gray-600 dark:text-gray-300 mb-2 sm:mb-4">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  <span className="text-xs sm:text-base">{experiences[openModalIndex].period} • {experiences[openModalIndex].location}</span>
+                <div className="flex items-center w-full mb-2 text-base sm:text-xl">
+                  <p className="text-blue-600 dark:text-blue-400 font-semibold mb-0">{experiences[openModalIndex].company}</p>
+                  <div className="flex-1"></div>
+                  <div className="flex items-center text-gray-600 dark:text-gray-300 text-xs sm:text-base ml-3">
+                    <Calendar className="w-4 h-4 mr-1" />
+                    <span>{experiences[openModalIndex].period} • {experiences[openModalIndex].location}</span>
+                  </div>
                 </div>
                 <p className="text-gray-700 dark:text-gray-200 text-base sm:text-lg mb-3 sm:mb-4 text-justify">{experiences[openModalIndex].description}</p>
                 <div className="mb-3 sm:mb-4">
