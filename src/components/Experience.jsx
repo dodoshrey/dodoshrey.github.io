@@ -18,7 +18,7 @@ const Experience = () => {
 
         <div className="font-mono space-y-6 sm:space-y-8">
           {experiences.map((exp, index) => (
-            <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-8 hover:shadow-xl transition-shadow duration-300">
+            <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-8 hover:shadow-xl transition-shadow duration-300 line-clamp-2">
 
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 sm:mb-6">
                 <div className="flex items-start space-x-3 sm:space-x-4">
@@ -46,7 +46,7 @@ const Experience = () => {
                 </button>
               </div>
               
-              <p className="text-gray-700 dark:text-gray-200 text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-200 text-sm sm:text-lg mb-0 leading-snug">
                 {exp.description}
               </p>
             </div>

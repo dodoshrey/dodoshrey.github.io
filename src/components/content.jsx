@@ -6,7 +6,7 @@ export const experiences = [
     company: "Microsoft Ireland",
     period: "April 2022 - Present",
     location: "Dublin, Ireland",
-    description: "Building solutions to improve security and privacy for Microsoft and connect to Microsoft services on https://login.live.com/ and https://account.live.com/pw to provide authentication to 2+ billion customers per month.",
+    description: "Building solutions to improve security and privacy for Microsoft and connect to Microsoft services on login.live.com and account.live.com to provide authentication to 2+ billion customers per month.",
     achievements: [
       "Independently delivered solutions across multiple micro-services following the Scrum development process.",
       "Migrated a legacy .NET Framework architecture to ReactJS, improving efficiency of service and reducing latency.",
@@ -61,7 +61,7 @@ export const experiences = [
     company: "NT-MDT",
     period: "September 2020 - May 2021",
     location: "Ireland",
-    description: "Worked on interface with the design team, product management and development teams to create elegant, usable, responsive and interactive interfaces across multiple devices.",
+    description: "Worked on interface with the design team, product management and development teams to create elegant, responsive and interactive interfaces across multiple devices.",
     achievements: [
       "Developed an in-depth understanding of the entire web development process using HTML, CSS and Javascript. Converting UI/UX designs into prototypes, creating excellent interactions from designs as well as developing features to enhance user experience"
     ],

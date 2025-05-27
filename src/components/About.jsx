@@ -11,16 +11,7 @@ const About = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-12 items-center">
-
-          <div>
-            <img 
-              src="https://img.freepik.com/premium-photo/3d-vector-illustration-web-dev-design-with-laptop-phone-coding-tools_1262618-495.jpg?w=360"
-              alt="Developer workspace"
-              className="rounded-lg w-full max-w-[220px] sm:max-w-xs md:max-w-lg lg:max-w-xl xl:max-w-2xl h-auto mx-auto"
-            />
-          </div>
-          
+        <div className="grid md:grid-cols-1 gap-6 sm:gap-12 items-center">          
           <div className="space-y-4 sm:space-y-6">
 
             <p className="text-base sm:text-lg font-mono text-purple-500 dark:text-orange-400 leading-relaxed">
@@ -36,11 +27,11 @@ const About = () => {
               performance and architecting scalable frontend solutions.
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-4 sm:mt-8">
+            <div className="grid grid-cols-3 sm:grid-cols-3 gap-4 sm:gap-6 mt-4 sm:mt-8">
               <div className="text-center p-4 sm:p-6 bg-blue-50 dark:bg-blue-900 rounded-lg">
                 <Code className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 dark:text-blue-300 mx-auto mb-2 sm:mb-3" />
                 <h3 className="font-sans text-base sm:text-lg text-gray-900 dark:text-white">Clean Code</h3>
-                <p className="font-mono text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-1 sm:mt-2">Writing maintainable, scalable solutions</p>
+                <p className="font-mono text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-1 sm:mt-2">Writing maintainable scalable solutions</p>
               </div>
               
               <div className="text-center p-4 sm:p-6 bg-purple-50 dark:bg-purple-900 rounded-lg">

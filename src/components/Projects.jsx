@@ -17,7 +17,7 @@ const Projects = () => {
 					</h2>
 				</div>
 
-				<div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
+				<div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
 					{projects.map((project, index) => (
 						<Card
 							key={index}
@@ -30,7 +30,7 @@ const Projects = () => {
 							onKeyDown={e => { if (e.key === "Enter" || e.key === " ") setSelectedProject(project); }}
 						>
 							{project.imageUrl && (
-								<div className="h-32 sm:h-48 overflow-hidden flex justify-center items-center w-full">
+								<div className="h-16 sm:h-48 overflow-hidden flex justify-center items-center w-full">
 									<img
 									src={project.imageUrl}
 									alt={project.title}
