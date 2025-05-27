@@ -21,13 +21,11 @@ const Experience = () => {
             <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-8 hover:shadow-xl transition-shadow duration-300">
 
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 sm:mb-6">
-                <div className="flex items-start space-x-3 sm:space-x-4">
-
+                <div className="flex items-start space-x-3 sm:space-x-4 w-full">
                   <div className="bg-blue-100 dark:bg-blue-900 p-2 sm:p-3 rounded-lg">
                     <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-300" />
                   </div>
-
-                  <div className="flex-1">
+                  <div className="flex-1 w-full">
                     <h3 className="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white">{exp.title}</h3>
                     <div className="flex items-center w-full">
                       <p className="text-base sm:text-xl text-blue-600 dark:text-blue-400 font-semibold mb-0 flex-1">{exp.company}</p>
@@ -39,13 +37,14 @@ const Experience = () => {
                       </button>
                     </div>
                   </div>
-
                 </div>
               </div>
-              
-              <p className="text-gray-700 dark:text-gray-200 text-sm sm:text-lg mb-0 leading-snug">
-                {exp.description}
-              </p>
+              <div className="flex">
+                <div className="flex-1"></div>
+                <p className="text-gray-700 dark:text-gray-200 text-sm sm:text-lg mb-0 leading-snug w-full md:w-auto">
+                  {exp.description}
+                </p>
+              </div>
             </div>
           ))}
 
