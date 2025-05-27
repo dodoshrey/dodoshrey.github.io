@@ -5,10 +5,10 @@ import { useTheme } from "next-themes";
 const navLinks = [
 	{ label: 'Home', section: 'hero' },
 	{ label: 'About', section: 'about' },
-	{ label: 'Projects', section: 'projects' },
 	{ label: 'Experience', section: 'experience' },
 	{ label: 'Skills', section: 'skills' },
-	{ label: 'Contact', section: 'contact' },
+	{ label: 'Projects', section: 'projects' },
+	{ label: 'Contact', section: 'contact' }
 ];
 
 const socialLinks = [

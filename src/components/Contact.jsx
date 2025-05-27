@@ -47,8 +47,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-sm sm:text-base">GitHub</div>
-                  <a href="https://github.com/shreywahi" target="_blank" rel="noopener noreferrer" className="text-blue-200 hover:text-blue-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 text-xs sm:text-base" aria-label="View GitHub profile">
-                    /shreywahi
+                  <a href="https://github.com/dodoshrey" target="_blank" rel="noopener noreferrer" className="text-blue-200 hover:text-blue-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 text-xs sm:text-base" aria-label="View GitHub profile">
+                    /dodoshrey
                   </a>
                 </div>
               </div>

@@ -1,18 +1,12 @@
-import { ArrowUp } from 'lucide-react';
 import { skillCategories, getColorClasses, getIconColor } from './content';
-
-const scrollToTop = () => {
-	const element = document.getElementById('hero');
-	element?.scrollIntoView({ behavior: 'smooth' });
-};
 
 const Skills = () => {
   return (
-    <section id="skills" className="min-h-[100vh] py-10 sm:py-20 bg-gradient-to-br from-blue-950 via-blue-300 to-blue-950 dark:from-gray-950 dark:via-gray-500 dark:to-gray-950 flex items-center justify-center">
+    <section id="skills" className="min-h-[100vh] py-10 sm:py-20 bg-blue-950 dark:bg-gray-950 flex items-center justify-center">
       <div className="max-w-6xl mx-auto px-2 sm:px-4 lg:px-8">
 
         <div className="text-center">
-          <h2 className="text-2xl sm:text-4xl font-serif md:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-4xl font-serif md:text-5xl font-bold text-orange-400 dark:text-purple-500 mb-4 sm:mb-6">
             Skills & Expertise
           </h2>
         </div>
@@ -48,38 +42,6 @@ const Skills = () => {
 
             </div>
           ))}
-        </div>
-
-        <div className="font-mono mt-8 sm:mt-16 text-center">
-          <h3 className="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-8">Proficiency Highlights</h3>
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-8">
-
-            <div className="bg-gradient-to-br from-blue-700 to-blue-900 dark:from-blue-900 dark:to-blue-800 p-4 sm:p-6 rounded-xl text-white">
-              <div className="text-xl sm:text-3xl font-bold mb-1 sm:mb-2">3+</div>
-              <div className="text-gray-100 text-xs sm:text-base">Years of Professional Experience</div>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-700 to-green-900 dark:from-green-900 dark:to-green-800 p-4 sm:p-6 rounded-xl text-white">
-              <div className="text-xl sm:text-3xl font-bold mb-1 sm:mb-2">20+</div>
-              <div className="text-gray-100 text-xs sm:text-base">Technologies Mastered</div>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-700 to-purple-900 dark:from-purple-900 dark:to-purple-800 p-4 sm:p-6 rounded-xl text-white">
-              <div className="text-xl sm:text-3xl font-bold mb-1 sm:mb-2">10+</div>
-              <div className="text-gray-100 text-xs sm:text-base">Projects Delivered</div>
-            </div>
-
-          </div>
-        </div>
-
-        <div className="font-mono text-center mt-12 sm:mt-24">
-          <button
-            onClick={scrollToTop}
-            className="animate-bounce text-gray-700 dark:text-gray-200 hover:text-blue-700 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-lg"
-            aria-label="Back To Top"
-          >
-            <ArrowUp size={28} className="inline-block ml-1" /> Back To Top <ArrowUp size={28} className="inline-block ml-1" />
-          </button>
         </div>
 
       </div>
