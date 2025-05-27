@@ -4,7 +4,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 text-center">
         <div className="animate-fade-in">
           <br /><br />
-          <h1 className="text-3xl sm:text-5xl md:text-8xl font-serif text-gray-900 dark:text-white mb-6 tracking-tight">
+          <h1 className="text-6xl sm:text-5xl md:text-8xl font-serif text-gray-900 dark:text-white mb-6 tracking-tight">
             Shrey
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-purple-700 dark:from-blue-400 dark:to-purple-400">
               {" "}Wahi{" "}
